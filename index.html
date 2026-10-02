@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Football Hub | Live Scores, Fixtures, Results & Football News</title>
+  <title>Football Hub | Watch Live Football</title>
 
   <meta
     name="description"
-    content="Football Hub brings live football scores, fixtures, results, standings, leagues, teams, players and football news together in one place."
+    content="FOOTBALL HUB - Watch live football, follow matches, fixtures and football competitions in one place."
   >
 
   <link rel="stylesheet" href="style.css">
@@ -16,17 +16,13 @@
 
 <body>
 
-  <!-- ================================
-       HEADER
-  ================================= -->
-
+  <!-- HEADER -->
   <header class="site-header">
 
     <div class="container header-inner">
 
       <a href="index.html" class="logo">
-        <span class="logo-ball">⚽</span>
-        <span>FOOTBALL HUB</span>
+        FOOTBALL <span>HUB</span>
       </a>
 
       <button
@@ -40,13 +36,29 @@
 
       <nav class="main-nav">
 
-        <a href="index.html">Home</a>
-        <a href="matches.html">Live Scores</a>
-        <a href="matches.html">Matches</a>
-        <a href="leagues.html">Leagues</a>
-        <a href="teams.html">Teams</a>
-        <a href="players.html">Players</a>
-        <a href="news.html">News</a>
+        <a href="index.html" class="active">
+          Home
+        </a>
+
+        <a href="matches.html">
+          Matches
+        </a>
+
+        <a href="leagues.html">
+          Leagues
+        </a>
+
+        <a href="teams.html">
+          Teams
+        </a>
+
+        <a href="players.html">
+          Players
+        </a>
+
+        <a href="news.html">
+          News
+        </a>
 
       </nav>
 
@@ -55,45 +67,33 @@
   </header>
 
 
-  <!-- ================================
-       HERO
-  ================================= -->
-
+  <!-- MAIN -->
   <main>
 
+    <!-- HERO -->
     <section class="hero">
 
       <div class="container hero-content">
 
-        <span class="hero-label">
-          THE WORLD OF FOOTBALL
-        </span>
+        <div>
 
-        <h1>
-          Everything Football.<br>
-          In One Place.
-        </h1>
+          <div class="live-label">
+            <span></span>
+            LIVE FOOTBALL
+          </div>
 
-        <p>
-          Follow real football from around the world with live scores,
-          fixtures, results, standings, competitions, teams, players,
-          statistics and football news.
-        </p>
+          <h1>
+            WATCH FOOTBALL<br>
+            <strong>IN ONE PLACE.</strong>
+          </h1>
 
-        <div class="hero-actions">
+          <p>
+            Find live football matches, upcoming games and
+            legitimate viewing options from around the world.
+          </p>
 
-          <a
-            href="matches.html"
-            class="button button-primary"
-          >
-            View Live Scores
-          </a>
-
-          <a
-            href="leagues.html"
-            class="button button-secondary"
-          >
-            Explore Leagues
+          <a href="#live-matches" class="primary-button">
+            WATCH LIVE MATCHES
           </a>
 
         </div>
@@ -103,11 +103,8 @@
     </section>
 
 
-    <!-- ================================
-         LIVE FOOTBALL
-    ================================= -->
-
-    <section class="main-section">
+    <!-- WATCH AREA -->
+    <section class="watch-section">
 
       <div class="container">
 
@@ -115,155 +112,135 @@
 
           <div>
 
-            <span class="hero-label">
-              LIVE FOOTBALL
+            <span class="section-label">
+              FOOTBALL PLAYER
             </span>
 
             <h2>
-              Live Scores
+              Watch Football
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="video-wrapper">
+
+          <div class="video-player">
+
+            <div class="video-placeholder">
+
+              <div class="play-circle">
+                ▶
+              </div>
+
+              <h3>
+                Select a match to watch
+              </h3>
+
+              <p>
+                Choose a match below when an authorized
+                video stream is available.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- LIVE MATCHES -->
+    <section
+      class="content-section"
+      id="live-matches"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div>
+
+            <span class="section-label">
+              LIVE NOW
+            </span>
+
+            <h2>
+              Live Matches
+            </h2>
+
+          </div>
+
+          <button
+            id="refreshLive"
+            class="secondary-button"
+            type="button"
+          >
+            Refresh
+          </button>
+
+        </div>
+
+
+        <div
+          id="liveMatches"
+          class="matches-list"
+        >
+
+          <div class="loading-message">
+            Loading live football...
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- UPCOMING -->
+    <section class="content-section">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div>
+
+            <span class="section-label">
+              COMING UP
+            </span>
+
+            <h2>
+              Upcoming Matches
             </h2>
 
           </div>
 
           <a
             href="matches.html"
-            class="button button-secondary"
+            class="text-link"
           >
-            All Matches
+            View all matches →
           </a>
 
         </div>
 
 
         <div
-          id="home-live-matches"
+          id="upcomingMatches"
           class="matches-list"
         >
 
-          <div class="loading-state">
-            Loading real live football...
+          <div class="loading-message">
+            Loading upcoming matches...
           </div>
-
-        </div>
-
-
-        <p
-          id="home-api-status"
-          class="api-note"
-        >
-          Connecting to real football data...
-        </p>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================================
-         QUICK ACCESS
-    ================================= -->
-
-    <section class="main-section">
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div>
-
-            <span class="hero-label">
-              QUICK ACCESS
-            </span>
-
-            <h2>
-              Football Information
-            </h2>
-
-          </div>
-
-        </div>
-
-
-        <div class="quick-access-grid">
-
-          <a
-            href="matches.html"
-            class="quick-card"
-          >
-
-            <span class="quick-card-icon">
-              📅
-            </span>
-
-            <h3>
-              Fixtures
-            </h3>
-
-            <p>
-              See upcoming football matches.
-            </p>
-
-          </a>
-
-
-          <a
-            href="matches.html"
-            class="quick-card"
-          >
-
-            <span class="quick-card-icon">
-              ✅
-            </span>
-
-            <h3>
-              Results
-            </h3>
-
-            <p>
-              Follow completed match results.
-            </p>
-
-          </a>
-
-
-          <a
-            href="leagues.html"
-            class="quick-card"
-          >
-
-            <span class="quick-card-icon">
-              🏆
-            </span>
-
-            <h3>
-              Standings
-            </h3>
-
-            <p>
-              Follow league tables and positions.
-            </p>
-
-          </a>
-
-
-          <a
-            href="players.html"
-            class="quick-card"
-          >
-
-            <span class="quick-card-icon">
-              ⚽
-            </span>
-
-            <h3>
-              Top Scorers
-            </h3>
-
-            <p>
-              Explore player performances and goals.
-            </p>
-
-          </a>
 
         </div>
 
@@ -272,11 +249,8 @@
     </section>
 
 
-    <!-- ================================
-         POPULAR COMPETITIONS
-    ================================= -->
-
-    <section class="main-section">
+    <!-- COMPETITIONS -->
+    <section class="content-section competitions-section">
 
       <div class="container">
 
@@ -284,37 +258,35 @@
 
           <div>
 
-            <span class="hero-label">
+            <span class="section-label">
               COMPETITIONS
             </span>
 
             <h2>
-              Popular Football Leagues
+              Popular Football
             </h2>
 
           </div>
 
           <a
             href="leagues.html"
-            class="button button-secondary"
+            class="text-link"
           >
-            View All Leagues
+            All competitions →
           </a>
 
         </div>
 
 
-        <div class="league-grid">
-
+        <div class="competition-grid">
 
           <a
             href="leagues.html"
-            class="league-card"
+            class="competition-card"
           >
-
-            <span class="league-card-icon">
-              🏴
-            </span>
+            <div class="competition-icon">
+              🏆
+            </div>
 
             <h3>
               Premier League
@@ -329,12 +301,30 @@
 
           <a
             href="leagues.html"
-            class="league-card"
+            class="competition-card"
           >
+            <div class="competition-icon">
+              🏆
+            </div>
 
-            <span class="league-card-icon">
-              🇪🇸
-            </span>
+            <h3>
+              Champions League
+            </h3>
+
+            <p>
+              Europe
+            </p>
+
+          </a>
+
+
+          <a
+            href="leagues.html"
+            class="competition-card"
+          >
+            <div class="competition-icon">
+              🏆
+            </div>
 
             <h3>
               La Liga
@@ -349,12 +339,11 @@
 
           <a
             href="leagues.html"
-            class="league-card"
+            class="competition-card"
           >
-
-            <span class="league-card-icon">
-              🇮🇹
-            </span>
+            <div class="competition-icon">
+              🏆
+            </div>
 
             <h3>
               Serie A
@@ -366,66 +355,6 @@
 
           </a>
 
-
-          <a
-            href="leagues.html"
-            class="league-card"
-          >
-
-            <span class="league-card-icon">
-              🇩🇪
-            </span>
-
-            <h3>
-              Bundesliga
-            </h3>
-
-            <p>
-              Germany
-            </p>
-
-          </a>
-
-
-          <a
-            href="leagues.html"
-            class="league-card"
-          >
-
-            <span class="league-card-icon">
-              🇫🇷
-            </span>
-
-            <h3>
-              Ligue 1
-            </h3>
-
-            <p>
-              France
-            </p>
-
-          </a>
-
-
-          <a
-            href="leagues.html"
-            class="league-card"
-          >
-
-            <span class="league-card-icon">
-              🏆
-            </span>
-
-            <h3>
-              Champions League
-            </h3>
-
-            <p>
-              UEFA
-            </p>
-
-          </a>
-
         </div>
 
       </div>
@@ -433,11 +362,8 @@
     </section>
 
 
-    <!-- ================================
-         FOOTBALL DATABASE
-    ================================= -->
-
-    <section class="main-section">
+    <!-- HOW IT WORKS -->
+    <section class="content-section">
 
       <div class="container">
 
@@ -445,12 +371,12 @@
 
           <div>
 
-            <span class="hero-label">
-              FOOTBALL DATABASE
+            <span class="section-label">
+              HOW IT WORKS
             </span>
 
             <h2>
-              Explore Football
+              Find Your Match
             </h2>
 
           </div>
@@ -458,70 +384,58 @@
         </div>
 
 
-        <div class="feature-grid">
+        <div class="steps-grid">
 
+          <div class="step-card">
 
-          <a
-            href="teams.html"
-            class="feature-card"
-          >
-
-            <span class="feature-card-icon">
-              🛡️
+            <span class="step-number">
+              01
             </span>
 
             <h3>
-              Teams
+              Choose a match
             </h3>
 
             <p>
-              Explore football clubs and national teams,
-              including their competitions and statistics.
+              Browse live and upcoming football matches.
             </p>
 
-          </a>
+          </div>
 
 
-          <a
-            href="players.html"
-            class="feature-card"
-          >
+          <div class="step-card">
 
-            <span class="feature-card-icon">
-              👤
+            <span class="step-number">
+              02
             </span>
 
             <h3>
-              Players
+              Select Watch
             </h3>
 
             <p>
-              Discover football players, positions,
-              appearances, goals and other statistics.
+              Choose an available authorized viewing option.
             </p>
 
-          </a>
+          </div>
 
 
-          <a
-            href="players.html"
-            class="feature-card"
-          >
+          <div class="step-card">
 
-            <span class="feature-card-icon">
-              📊
+            <span class="step-number">
+              03
             </span>
 
             <h3>
-              Statistics
+              Watch
             </h3>
 
             <p>
-              Follow football performances, player statistics
-              and competition data.
+              Open the legitimate stream or video provider
+              for the match.
             </p>
 
-          </a>
+          </div>
 
         </div>
 
@@ -530,138 +444,24 @@
     </section>
 
 
-    <!-- ================================
-         NEWS
-    ================================= -->
-
-    <section class="main-section">
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div>
-
-            <span class="hero-label">
-              FOOTBALL NEWS
-            </span>
-
-            <h2>
-              Latest Football News
-            </h2>
-
-          </div>
-
-          <a
-            href="news.html"
-            class="button button-secondary"
-          >
-            View News
-          </a>
-
-        </div>
-
-
-        <div class="news-grid">
-
-          <a
-            href="news.html"
-            class="news-card"
-          >
-
-            <div class="news-card-content">
-
-              <span class="hero-label">
-                FOOTBALL NEWS
-              </span>
-
-              <h3>
-                Latest Football Updates
-              </h3>
-
-              <p>
-                Follow football news, competition updates,
-                team stories and player developments.
-              </p>
-
-            </div>
-
-          </a>
-
-
-          <a
-            href="news.html"
-            class="news-card"
-          >
-
-            <div class="news-card-content">
-
-              <span class="hero-label">
-                TRANSFERS
-              </span>
-
-              <h3>
-                Transfer News
-              </h3>
-
-              <p>
-                Follow transfer activity and player movement
-                from football around the world.
-              </p>
-
-            </div>
-
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================================
-         FOOTBALL HUB INFORMATION
-    ================================= -->
-
-    <section class="main-section">
+    <!-- IMPORTANT NOTICE -->
+    <section class="info-section">
 
       <div class="container">
 
         <div class="info-card">
 
-          <span class="hero-label">
-            FOOTBALL HUB
-          </span>
-
           <h2>
-            Everything Football. In One Place.
+            Football Hub Viewing
           </h2>
 
           <p>
-            Football Hub is being built to bring real football
-            information together in one professional platform.
-            Follow matches, competitions, teams, players,
-            statistics and football news.
+            Football Hub is being developed to help fans
+            find football matches and legitimate viewing
+            options. Full live broadcasts will only be
+            connected through authorized streaming providers
+            or official video sources.
           </p>
-
-          <div class="hero-actions">
-
-            <a
-              href="matches.html"
-              class="button button-primary"
-            >
-              Follow Matches
-            </a>
-
-            <a
-              href="teams.html"
-              class="button button-secondary"
-            >
-              Explore Teams
-            </a>
-
-          </div>
 
         </div>
 
@@ -672,18 +472,56 @@
   </main>
 
 
-  <!-- ================================
-       FOOTER
-  ================================= -->
-
+  <!-- FOOTER -->
   <footer class="site-footer">
 
-    <div class="container">
+    <div class="container footer-inner">
+
+      <div>
+
+        <div class="footer-logo">
+          FOOTBALL HUB
+        </div>
+
+        <p>
+          Everything Football. In One Place.
+        </p>
+
+      </div>
+
+
+      <div class="footer-links">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="matches.html">
+          Matches
+        </a>
+
+        <a href="leagues.html">
+          Leagues
+        </a>
+
+        <a href="teams.html">
+          Teams
+        </a>
+
+        <a href="news.html">
+          News
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="container footer-bottom">
 
       <p>
         © <span data-current-year></span>
-        Football Hub.
-        Everything Football. In One Place.
+        FOOTBALL HUB. All rights reserved.
       </p>
 
     </div>
@@ -692,182 +530,90 @@
 
 
   <!-- SHARED JAVASCRIPT -->
-
   <script src="script.js"></script>
 
 
-  <!-- ================================
-       HOMEPAGE FOOTBALL DATA
-  ================================= -->
-
+  <!-- FOOTBALL DATA -->
   <script>
 
-    const HOME_API_ENDPOINT = "/api/football";
-
     const liveContainer =
-      document.getElementById("home-live-matches");
+      document.getElementById("liveMatches");
 
-    const statusContainer =
-      document.getElementById("home-api-status");
+    const upcomingContainer =
+      document.getElementById("upcomingMatches");
 
+    const refreshButton =
+      document.getElementById("refreshLive");
 
-    /* ================================
-       ESCAPE HTML
-    ================================= */
 
     function escapeHtml(value) {
 
-      return String(value ?? "")
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
-
-    }
-
-
-    /* ================================
-       ESCAPE ATTRIBUTE
-    ================================= */
-
-    function escapeAttribute(value) {
-
-      return escapeHtml(value);
-
-    }
-
-
-    /* ================================
-       GET LIVE MATCHES
-    ================================= */
-
-    async function getLiveMatches() {
-
-      const url =
-        `${HOME_API_ENDPOINT}?endpoint=fixtures&live=all`;
-
-      const response =
-        await fetch(url);
-
-      let data;
-
-      try {
-
-        data =
-          await response.json();
-
-      } catch (error) {
-
-        throw new Error(
-          "Invalid response from football API."
-        );
-
+      if (value === null || value === undefined) {
+        return "";
       }
 
-
-      if (!response.ok) {
-
-        if (data && data.errors) {
-
-          throw new Error(
-            Object.values(data.errors).join(", ")
-          );
-
-        }
-
-        throw new Error(
-          data?.error ||
-          "Football API request failed."
-        );
-
-      }
-
-
-      if (
-        data.errors &&
-        Object.keys(data.errors).length > 0
-      ) {
-
-        throw new Error(
-          Object.values(data.errors).join(", ")
-        );
-
-      }
-
-
-      return data.response || [];
+      return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
 
     }
 
-
-    /* ================================
-       CHECK LIVE STATUS
-    ================================= */
-
-    function isLive(match) {
-
-      const status =
-        match?.fixture?.status?.short || "";
-
-      return [
-        "1H",
-        "HT",
-        "2H",
-        "ET",
-        "BT",
-        "P",
-        "LIVE"
-      ].includes(status);
-
-    }
-
-
-    /* ================================
-       STATUS
-    ================================= */
 
     function getMatchStatus(match) {
 
       const status =
-        match?.fixture?.status?.short || "";
+        match.fixture &&
+        match.fixture.status
+          ? match.fixture.status
+          : {};
 
-      const longStatus =
-        match?.fixture?.status?.long || "";
+      const short =
+        status.short || "";
 
-      if (status === "HT") {
-        return "HT";
-      }
+      const elapsed =
+        status.elapsed;
 
+      if (
+        short === "1H" ||
+        short === "2H" ||
+        short === "ET" ||
+        short === "P"
+      ) {
 
-      if (isLive(match)) {
-
-        const minute =
-          match?.fixture?.status?.elapsed;
-
-        return minute
-          ? `${minute}'`
+        return elapsed
+          ? `${elapsed}'`
           : "LIVE";
 
       }
 
+      if (short === "HT") {
+        return "HT";
+      }
 
-      return longStatus || status;
+      if (short === "FT") {
+        return "FT";
+      }
+
+      if (short === "NS") {
+        return "UPCOMING";
+      }
+
+      if (short === "PST") {
+        return "POSTPONED";
+      }
+
+      return short || "LIVE";
 
     }
 
 
-    /* ================================
-       MATCH CARD
-    ================================= */
-
-    function createLiveMatchCard(match) {
+    function createMatchCard(match, isLive = false) {
 
       const fixture =
         match.fixture || {};
-
-      const league =
-        match.league || {};
 
       const teams =
         match.teams || {};
@@ -875,259 +621,449 @@
       const goals =
         match.goals || {};
 
+      const league =
+        match.league || {};
+
       const home =
         teams.home || {};
 
       const away =
         teams.away || {};
 
-
       const homeScore =
-        goals.home ?? 0;
+        goals.home !== null &&
+        goals.home !== undefined
+          ? goals.home
+          : "-";
 
       const awayScore =
-        goals.away ?? 0;
+        goals.away !== null &&
+        goals.away !== undefined
+          ? goals.away
+          : "-";
+
+      const status =
+        getMatchStatus(match);
+
+      const kickoff =
+        fixture.date
+          ? new Date(fixture.date).toLocaleTimeString(
+              [],
+              {
+                hour: "2-digit",
+                minute: "2-digit"
+              }
+            )
+          : "";
+
+      const leagueName =
+        league.name || "Football";
+
+      const homeLogo =
+        home.logo || "";
+
+      const awayLogo =
+        away.logo || "";
 
 
-      const card =
-        document.createElement("article");
+      return `
 
-      card.className =
-        "match-card";
+        <article class="watch-match-card">
+
+          <div class="match-top">
+
+            <div class="competition-name">
+              ${escapeHtml(leagueName)}
+            </div>
+
+            <div class="match-status ${
+              isLive ? "live-status" : ""
+            }">
+
+              ${
+                isLive
+                  ? `<span class="live-dot"></span>`
+                  : ""
+              }
+
+              ${escapeHtml(status)}
+
+            </div>
+
+          </div>
 
 
-      card.innerHTML = `
+          <div class="match-teams">
 
-        <div class="match-card-top">
+            <div class="match-team">
 
-          <span class="competition-name">
-            ${escapeHtml(
-              league.name || "Football"
-            )}
-          </span>
+              ${
+                homeLogo
+                  ? `
+                    <img
+                      src="${escapeHtml(homeLogo)}"
+                      alt=""
+                      loading="lazy"
+                    >
+                  `
+                  : `
+                    <div class="team-placeholder">
+                      ⚽
+                    </div>
+                  `
+              }
 
-          <span class="match-status live">
-            🔴
-            ${escapeHtml(
-              getMatchStatus(match)
-            )}
-          </span>
+              <strong>
+                ${escapeHtml(home.name || "Home")}
+              </strong>
 
-        </div>
+            </div>
 
 
-        <div class="match-teams">
+            <div class="match-score">
 
-          <div class="team-side home">
+              <span>
+                ${escapeHtml(homeScore)}
+              </span>
 
-            <span class="team-name">
-              ${escapeHtml(
-                home.name || "Home"
-              )}
-            </span>
+              <small>
+                ${escapeHtml(kickoff)}
+              </small>
+
+              <span>
+                ${escapeHtml(awayScore)}
+              </span>
+
+            </div>
+
+
+            <div class="match-team">
+
+              ${
+                awayLogo
+                  ? `
+                    <img
+                      src="${escapeHtml(awayLogo)}"
+                      alt=""
+                      loading="lazy"
+                    >
+                  `
+                  : `
+                    <div class="team-placeholder">
+                      ⚽
+                    </div>
+                  `
+              }
+
+              <strong>
+                ${escapeHtml(away.name || "Away")}
+              </strong>
+
+            </div>
+
+          </div>
+
+
+          <div class="watch-action">
 
             ${
-              home.logo
+              isLive
                 ? `
-                  <img
-                    class="team-logo"
-                    src="${escapeAttribute(home.logo)}"
-                    alt="${escapeAttribute(
-                      home.name || "Home team"
-                    )}"
-                    loading="lazy"
+                  <button
+                    type="button"
+                    class="watch-button"
+                    onclick="showStreamMessage('${escapeHtml(
+                      fixture.id || ""
+                    )}')"
                   >
+                    ▶ WATCH
+                  </button>
                 `
-                : ""
+                : `
+                  <span class="not-live-label">
+                    Match not live yet
+                  </span>
+                `
             }
 
           </div>
 
-
-          <div class="match-score">
-
-            ${escapeHtml(
-              homeScore
-            )}
-            -
-            ${escapeHtml(
-              awayScore
-            )}
-
-          </div>
-
-
-          <div class="team-side away">
-
-            ${
-              away.logo
-                ? `
-                  <img
-                    class="team-logo"
-                    src="${escapeAttribute(away.logo)}"
-                    alt="${escapeAttribute(
-                      away.name || "Away team"
-                    )}"
-                    loading="lazy"
-                  >
-                `
-                : ""
-            }
-
-            <span class="team-name">
-              ${escapeHtml(
-                away.name || "Away"
-              )}
-            </span>
-
-          </div>
-
-        </div>
+        </article>
 
       `;
-
-
-      return card;
 
     }
 
 
-    /* ================================
-       DISPLAY LIVE MATCHES
-    ================================= */
+    function showStreamMessage(matchId) {
 
-    function displayLiveMatches(matches) {
+      const player =
+        document.querySelector(".video-placeholder");
 
-      liveContainer.innerHTML = "";
-
-
-      if (!matches.length) {
-
-        liveContainer.innerHTML = `
-
-          <div class="empty-state">
-
-            <strong>
-              No live matches right now.
-            </strong>
-
-            <p>
-              Check the Matches page for upcoming
-              fixtures and recent results.
-            </p>
-
-          </div>
-
-        `;
-
+      if (!player) {
         return;
-
       }
 
+      player.innerHTML = `
 
-      matches
-        .slice(0, 8)
-        .forEach(match => {
+        <div class="play-circle">
+          ▶
+        </div>
 
-          liveContainer.appendChild(
-            createLiveMatchCard(match)
-          );
+        <h3>
+          Viewing source not connected yet
+        </h3>
 
-        });
+        <p>
+          Match ID: ${escapeHtml(matchId)}
+        </p>
+
+        <p>
+          The next step is connecting authorized
+          football streaming providers.
+        </p>
+
+      `;
+
+      window.scrollTo({
+        top:
+          document.querySelector(
+            ".watch-section"
+          ).offsetTop - 20,
+
+        behavior: "smooth"
+      });
 
     }
 
 
-    /* ================================
-       LOAD LIVE FOOTBALL
-    ================================= */
-
-    async function loadHomeLiveMatches() {
+    async function loadLiveMatches() {
 
       liveContainer.innerHTML = `
-
-        <div class="loading-state">
-          Loading real live football...
+        <div class="loading-message">
+          Loading live football...
         </div>
-
       `;
-
-      statusContainer.textContent =
-        "Connecting to real football data...";
 
 
       try {
 
-        const matches =
-          await getLiveMatches();
+        const response =
+          await fetch(
+            "/api/football?endpoint=fixtures&live=all"
+          );
 
 
-        displayLiveMatches(matches);
-
-
-        if (matches.length) {
-
-          statusContainer.textContent =
-            `${matches.length} live ${
-              matches.length === 1
-                ? "match"
-                : "matches"
-            } currently available.`;
-
-        } else {
-
-          statusContainer.textContent =
-            "No live matches are currently available.";
-
+        if (!response.ok) {
+          throw new Error(
+            "Unable to connect to football API."
+          );
         }
+
+
+        const data =
+          await response.json();
+
+
+        const matches =
+          Array.isArray(data.response)
+            ? data.response
+            : [];
+
+
+        if (!matches.length) {
+
+          liveContainer.innerHTML = `
+
+            <div class="empty-message">
+
+              <h3>
+                No live matches right now
+              </h3>
+
+              <p>
+                Check again when football matches
+                are being played.
+              </p>
+
+            </div>
+
+          `;
+
+          return;
+        }
+
+
+        liveContainer.innerHTML =
+          matches
+            .slice(0, 20)
+            .map(
+              match =>
+                createMatchCard(match, true)
+            )
+            .join("");
 
 
       } catch (error) {
 
-        console.error(
-          "Football Hub live data error:",
-          error
-        );
-
+        console.error(error);
 
         liveContainer.innerHTML = `
 
-          <div class="error-state">
+          <div class="error-message">
 
-            <strong>
-              Unable to load live football data.
-            </strong>
+            <h3>
+              Unable to load live football
+            </h3>
 
             <p>
-              Please refresh the page and try again.
+              Check the API connection and try again.
             </p>
 
           </div>
 
         `;
 
+      }
 
-        statusContainer.textContent =
-          "Football data could not be loaded.";
+    }
+
+
+    async function loadUpcomingMatches() {
+
+      upcomingContainer.innerHTML = `
+
+        <div class="loading-message">
+          Loading upcoming matches...
+        </div>
+
+      `;
+
+
+      try {
+
+        const today =
+          new Date();
+
+
+        const date =
+          today.toISOString()
+            .split("T")[0];
+
+
+        const response =
+          await fetch(
+            `/api/football?endpoint=fixtures&date=${date}`
+          );
+
+
+        if (!response.ok) {
+          throw new Error(
+            "Unable to load fixtures."
+          );
+        }
+
+
+        const data =
+          await response.json();
+
+
+        const matches =
+          Array.isArray(data.response)
+            ? data.response
+            : [];
+
+
+        const upcoming =
+          matches.filter(match => {
+
+            const short =
+              match.fixture &&
+              match.fixture.status
+                ? match.fixture.status.short
+                : "";
+
+            return short === "NS";
+
+          });
+
+
+        if (!upcoming.length) {
+
+          upcomingContainer.innerHTML = `
+
+            <div class="empty-message">
+
+              <h3>
+                No upcoming matches found
+              </h3>
+
+              <p>
+                Check the Matches page for more fixtures.
+              </p>
+
+            </div>
+
+          `;
+
+          return;
+        }
+
+
+        upcomingContainer.innerHTML =
+          upcoming
+            .slice(0, 10)
+            .map(
+              match =>
+                createMatchCard(match, false)
+            )
+            .join("");
+
+
+      } catch (error) {
+
+        console.error(error);
+
+        upcomingContainer.innerHTML = `
+
+          <div class="error-message">
+
+            <h3>
+              Unable to load upcoming matches
+            </h3>
+
+            <p>
+              Check the API connection and try again.
+            </p>
+
+          </div>
+
+        `;
 
       }
 
     }
 
 
-    /* ================================
-       INITIAL LOAD
-    ================================= */
+    refreshButton.addEventListener(
+      "click",
+      () => {
 
-    loadHomeLiveMatches();
+        loadLiveMatches();
+
+        loadUpcomingMatches();
+
+      }
+    );
 
 
-    /* ================================
-       REFRESH LIVE SCORES
-    ================================= */
+    loadLiveMatches();
+
+    loadUpcomingMatches();
+
 
     setInterval(
-      loadHomeLiveMatches,
+      loadLiveMatches,
       60000
     );
 
