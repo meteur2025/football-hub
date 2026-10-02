@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Matches | Football Hub</title>
+
+  <meta
+    name="description"
+    content="Football Hub matches, live scores, fixtures and results."
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =====================================================
+       HEADER
+       ===================================================== -->
+
+  <header class="site-header">
+
+    <div class="container header-inner">
+
+      <a href="index.html" class="logo">
+        <span class="logo-ball">⚽</span>
+        <span>FOOTBALL HUB</span>
+      </a>
+
+      <button
+        class="menu-button"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+      <nav class="main-nav" aria-label="Main navigation">
+
+        <a href="index.html">Home</a>
+        <a href="matches.html">Live Scores</a>
+        <a href="matches.html">Matches</a>
+        <a href="leagues.html">Leagues</a>
+        <a href="teams.html">Teams</a>
+        <a href="players.html">Players</a>
+        <a href="news.html">News</a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       PAGE HEADER
+       ===================================================== -->
+
+  <section class="page-header">
+
+    <div class="container">
+
+      <h1>
+        Matches
+      </h1>
+
+      <p>
+        Follow live scores, upcoming fixtures and completed
+        football results from competitions around the world.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       MAIN CONTENT
+       ===================================================== -->
+
+  <main>
+
+    <div class="container">
+
+
+      <!-- =================================================
+           MATCH FILTERS
+           ================================================= -->
+
+      <section class="section">
+
+        <div class="section-heading">
+
+          <h2>
+            Match Centre
+          </h2>
+
+          <span>
+            Real football data
+          </span>
+
+        </div>
+
+
+        <div class="filters">
+
+          <select id="match-type" aria-label="Match type">
+
+            <option value="all">
+              All Matches
+            </option>
+
+            <option value="live">
+              Live
+            </option>
+
+            <option value="fixtures">
+              Fixtures
+            </option>
+
+            <option value="results">
+              Results
+            </option>
+
+          </select>
+
+
+          <select id="competition-filter" aria-label="Competition">
+
+            <option value="all">
+              All Competitions
+            </option>
+
+            <option value="premier-league">
+              Premier League
+            </option>
+
+            <option value="la-liga">
+              La Liga
+            </option>
+
+            <option value="serie-a">
+              Serie A
+            </option>
+
+            <option value="bundesliga">
+              Bundesliga
+            </option>
+
+            <option value="ligue-1">
+              Ligue 1
+            </option>
+
+            <option value="champions-league">
+              Champions League
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- ===============================================
+             LIVE MATCHES
+             =============================================== -->
+
+        <div class="section-heading">
+
+          <h2>
+            Live
+          </h2>
+
+        </div>
+
+        <div class="live-box">
+
+          <div class="live-icon">
+            ⚽
+          </div>
+
+          <h3>
+            No live matches displayed yet
+          </h3>
+
+          <p>
+            Live match data will appear here after Football Hub
+            is connected to the football data API.
+          </p>
+
+          <div class="status">
+
+            <span class="status-dot"></span>
+
+            <span>
+              Waiting for live data
+            </span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           FIXTURES
+           ================================================= -->
+
+      <section class="section">
+
+        <div class="section-heading">
+
+          <h2>
+            Upcoming Fixtures
+          </h2>
+
+          <span>
+            Scheduled matches
+          </span>
+
+        </div>
+
+
+        <div class="no-results">
+
+          <p>
+            Upcoming fixtures will appear here when real football
+            data is connected.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           RESULTS
+           ================================================= -->
+
+      <section class="section">
+
+        <div class="section-heading">
+
+          <h2>
+            Recent Results
+          </h2>
+
+          <span>
+            Completed matches
+          </span>
+
+        </div>
+
+
+        <div class="no-results">
+
+          <p>
+            Recent match results will appear here when real
+            football data is connected.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           MATCH INFORMATION
+           ================================================= -->
+
+      <section class="section">
+
+        <div class="section-heading">
+
+          <h2>
+            Match Information
+          </h2>
+
+        </div>
+
+
+        <div class="features">
+
+          <div class="feature">
+
+            <div class="feature-icon">
+              🔴
+            </div>
+
+            <h3>
+              Live Scores
+            </h3>
+
+            <p>
+              Follow live matches, scores and important match
+              events when the live data connection is active.
+            </p>
+
+          </div>
+
+
+          <div class="feature">
+
+            <div class="feature-icon">
+              📅
+            </div>
+
+            <h3>
+              Fixtures
+            </h3>
+
+            <p>
+              Find scheduled matches across domestic and
+              international competitions.
+            </p>
+
+          </div>
+
+
+          <div class="feature">
+
+            <div class="feature-icon">
+              🏆
+            </div>
+
+            <h3>
+              Results
+            </h3>
+
+            <p>
+              Review completed football matches and their
+              final scores.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+    </div>
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-inner">
+
+      <div>
+
+        <div class="footer-logo">
+          FOOTBALL HUB
+        </div>
+
+        <div class="footer-text">
+          Everything Football. In One Place.
+        </div>
+
+        <div class="footer-text">
+          © <span data-current-year></span> Football Hub.
+          All rights reserved.
+        </div>
+
+      </div>
+
+
+      <div class="footer-links">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="matches.html">
+          Matches
+        </a>
+
+        <a href="leagues.html">
+          Leagues
+        </a>
+
+        <a href="teams.html">
+          Teams
+        </a>
+
+        <a href="players.html">
+          Players
+        </a>
+
+        <a href="news.html">
+          News
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+       ===================================================== -->
+
+  <script src="script.js"></script>
+
+</body>
+</html>
