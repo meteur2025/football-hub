@@ -1,1073 +1,295 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+FOOTBALL
+HUB
+Home
+Matches
+Leagues
+Teams
+Players
+News
+LIVE FOOTBALL
+WATCH FOOTBALL
+IN ONE PLACE.
+Find live football matches, upcoming games and legitimate viewing options from around the world.
+
+WATCH LIVE MATCHES
+FOOTBALL PLAYER
+Watch Football
+▶
+Select a match to watch
+Choose a match below when an authorized video stream is available.
+
+LIVE NOW
+Live Matches
+Refresh
+III Liga - Group 4
+22'
+
+Wisłoka Dębica
+0 06:30 PM 0
+
+Pogoń-Sokół Lubaczów
+▶ WATCH
+League Cup
+7'
+
+Khorfakkan
+0 06:45 PM 0
+
+Al-Jazira
+▶ WATCH
+League Cup
+7'
+
+Shabab Al Ahli Dubai
+0 06:45 PM 0
+
+Al Nasr
+▶ WATCH
+Friendlies Clubs
+21'
+
+Red Bull Salzburg
+1 06:30 PM 0
+
+FC BW Linz
+▶ WATCH
+Ligue 1
+21'
+
+Salitas
+0 06:30 PM 0
+
+Réal du Faso
+▶ WATCH
+1. Division
+65'
+
+Volna
+0 05:30 PM 2
+
+Lida
+▶ WATCH
+FA Cup
+65'
+
+Al-Shabab
+1 05:25 PM 1
+
+Saham
+▶ WATCH
+FA Cup
+59'
+
+Al-Nahda
+0 05:30 PM 0
+
+Sohar
+▶ WATCH
+Super League Women
+90'
+
+Copperbelt Ladies W
+2 05:00 PM 2
+
+Stellenbosch W
+▶ WATCH
+Ligue 2
+90'
+
+USM Annaba
+2 05:00 PM 1
+
+Paradou AC
+▶ WATCH
+Ligue 2
+90'
+
+CA Batna
+0 05:00 PM 1
 
-  <title>Football Hub | Watch Live Football</title>
+MSP Batna
+▶ WATCH
+Ligue 2
+89'
+
+MO Constantine
+2 05:00 PM 1
 
-  <meta
-    name="description"
-    content="FOOTBALL HUB - Watch live football, follow matches, fixtures and football competitions in one place."
-  >
+CR Béni Thour
+▶ WATCH
+Ligue 2
+87'
+
+Teleghma
+1 05:00 PM 2
 
-  <link rel="stylesheet" href="style.css">
-</head>
+NC Magra
+▶ WATCH
+Ligue 2
+90'
+
+US Chaouia
+0 05:00 PM 0
 
-<body>
+Khroub
+▶ WATCH
+Friendlies Clubs
+67'
+
+FC Aarau
+0 05:30 PM 2
 
-  <!-- HEADER -->
-  <header class="site-header">
+BSC Young Boys
+▶ WATCH
+Friendlies Clubs
+62'
+
+Zrinjski
+0 05:30 PM 1
 
-    <div class="container header-inner">
-
-      <a href="index.html" class="logo">
-        FOOTBALL <span>HUB</span>
-      </a>
-
-      <button
-        class="menu-button"
-        type="button"
-        aria-label="Open navigation"
-        aria-expanded="false"
-      >
-        ☰
-      </button>
-
-      <nav class="main-nav">
-
-        <a href="index.html" class="active">
-          Home
-        </a>
-
-        <a href="matches.html">
-          Matches
-        </a>
-
-        <a href="leagues.html">
-          Leagues
-        </a>
-
-        <a href="teams.html">
-          Teams
-        </a>
-
-        <a href="players.html">
-          Players
-        </a>
-
-        <a href="news.html">
-          News
-        </a>
-
-      </nav>
-
-    </div>
-
-  </header>
-
-
-  <!-- MAIN -->
-  <main>
-
-    <!-- HERO -->
-    <section class="hero">
-
-      <div class="container hero-content">
-
-        <div>
-
-          <div class="live-label">
-            <span></span>
-            LIVE FOOTBALL
-          </div>
-
-          <h1>
-            WATCH FOOTBALL<br>
-            <strong>IN ONE PLACE.</strong>
-          </h1>
-
-          <p>
-            Find live football matches, upcoming games and
-            legitimate viewing options from around the world.
-          </p>
-
-          <a href="#live-matches" class="primary-button">
-            WATCH LIVE MATCHES
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- WATCH AREA -->
-    <section class="watch-section">
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div>
-
-            <span class="section-label">
-              FOOTBALL PLAYER
-            </span>
-
-            <h2>
-              Watch Football
-            </h2>
-
-          </div>
-
-        </div>
-
-
-        <div class="video-wrapper">
-
-          <div class="video-player">
-
-            <div class="video-placeholder">
-
-              <div class="play-circle">
-                ▶
-              </div>
-
-              <h3>
-                Select a match to watch
-              </h3>
-
-              <p>
-                Choose a match below when an authorized
-                video stream is available.
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- LIVE MATCHES -->
-    <section
-      class="content-section"
-      id="live-matches"
-    >
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div>
-
-            <span class="section-label">
-              LIVE NOW
-            </span>
-
-            <h2>
-              Live Matches
-            </h2>
-
-          </div>
-
-          <button
-            id="refreshLive"
-            class="secondary-button"
-            type="button"
-          >
-            Refresh
-          </button>
-
-        </div>
-
-
-        <div
-          id="liveMatches"
-          class="matches-list"
-        >
-
-          <div class="loading-message">
-            Loading live football...
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- UPCOMING -->
-    <section class="content-section">
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div>
-
-            <span class="section-label">
-              COMING UP
-            </span>
-
-            <h2>
-              Upcoming Matches
-            </h2>
-
-          </div>
-
-          <a
-            href="matches.html"
-            class="text-link"
-          >
-            View all matches →
-          </a>
-
-        </div>
-
-
-        <div
-          id="upcomingMatches"
-          class="matches-list"
-        >
-
-          <div class="loading-message">
-            Loading upcoming matches...
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- COMPETITIONS -->
-    <section class="content-section competitions-section">
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div>
-
-            <span class="section-label">
-              COMPETITIONS
-            </span>
-
-            <h2>
-              Popular Football
-            </h2>
-
-          </div>
-
-          <a
-            href="leagues.html"
-            class="text-link"
-          >
-            All competitions →
-          </a>
-
-        </div>
-
-
-        <div class="competition-grid">
-
-          <a
-            href="leagues.html"
-            class="competition-card"
-          >
-            <div class="competition-icon">
-              🏆
-            </div>
-
-            <h3>
-              Premier League
-            </h3>
-
-            <p>
-              England
-            </p>
-
-          </a>
-
-
-          <a
-            href="leagues.html"
-            class="competition-card"
-          >
-            <div class="competition-icon">
-              🏆
-            </div>
-
-            <h3>
-              Champions League
-            </h3>
-
-            <p>
-              Europe
-            </p>
-
-          </a>
-
-
-          <a
-            href="leagues.html"
-            class="competition-card"
-          >
-            <div class="competition-icon">
-              🏆
-            </div>
-
-            <h3>
-              La Liga
-            </h3>
-
-            <p>
-              Spain
-            </p>
-
-          </a>
-
-
-          <a
-            href="leagues.html"
-            class="competition-card"
-          >
-            <div class="competition-icon">
-              🏆
-            </div>
-
-            <h3>
-              Serie A
-            </h3>
-
-            <p>
-              Italy
-            </p>
-
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- HOW IT WORKS -->
-    <section class="content-section">
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div>
-
-            <span class="section-label">
-              HOW IT WORKS
-            </span>
-
-            <h2>
-              Find Your Match
-            </h2>
-
-          </div>
-
-        </div>
-
-
-        <div class="steps-grid">
-
-          <div class="step-card">
-
-            <span class="step-number">
-              01
-            </span>
-
-            <h3>
-              Choose a match
-            </h3>
-
-            <p>
-              Browse live and upcoming football matches.
-            </p>
-
-          </div>
-
-
-          <div class="step-card">
-
-            <span class="step-number">
-              02
-            </span>
-
-            <h3>
-              Select Watch
-            </h3>
-
-            <p>
-              Choose an available authorized viewing option.
-            </p>
-
-          </div>
-
-
-          <div class="step-card">
-
-            <span class="step-number">
-              03
-            </span>
-
-            <h3>
-              Watch
-            </h3>
-
-            <p>
-              Open the legitimate stream or video provider
-              for the match.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- IMPORTANT NOTICE -->
-    <section class="info-section">
-
-      <div class="container">
-
-        <div class="info-card">
-
-          <h2>
-            Football Hub Viewing
-          </h2>
-
-          <p>
-            Football Hub is being developed to help fans
-            find football matches and legitimate viewing
-            options. Full live broadcasts will only be
-            connected through authorized streaming providers
-            or official video sources.
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-
-    <div class="container footer-inner">
-
-      <div>
-
-        <div class="footer-logo">
-          FOOTBALL HUB
-        </div>
-
-        <p>
-          Everything Football. In One Place.
-        </p>
-
-      </div>
-
-
-      <div class="footer-links">
-
-        <a href="index.html">
-          Home
-        </a>
-
-        <a href="matches.html">
-          Matches
-        </a>
-
-        <a href="leagues.html">
-          Leagues
-        </a>
-
-        <a href="teams.html">
-          Teams
-        </a>
-
-        <a href="news.html">
-          News
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <div class="container footer-bottom">
-
-      <p>
-        © <span data-current-year></span>
-        FOOTBALL HUB. All rights reserved.
-      </p>
-
-    </div>
-
-  </footer>
-
-
-  <!-- SHARED JAVASCRIPT -->
-  <script src="script.js"></script>
-
-
-  <!-- FOOTBALL DATA -->
-  <script>
-
-    const liveContainer =
-      document.getElementById("liveMatches");
-
-    const upcomingContainer =
-      document.getElementById("upcomingMatches");
-
-    const refreshButton =
-      document.getElementById("refreshLive");
-
-
-    function escapeHtml(value) {
-
-      if (value === null || value === undefined) {
-        return "";
-      }
-
-      return String(value)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-
-    }
-
-
-    function getMatchStatus(match) {
-
-      const status =
-        match.fixture &&
-        match.fixture.status
-          ? match.fixture.status
-          : {};
-
-      const short =
-        status.short || "";
-
-      const elapsed =
-        status.elapsed;
-
-      if (
-        short === "1H" ||
-        short === "2H" ||
-        short === "ET" ||
-        short === "P"
-      ) {
-
-        return elapsed
-          ? `${elapsed}'`
-          : "LIVE";
-
-      }
-
-      if (short === "HT") {
-        return "HT";
-      }
-
-      if (short === "FT") {
-        return "FT";
-      }
-
-      if (short === "NS") {
-        return "UPCOMING";
-      }
-
-      if (short === "PST") {
-        return "POSTPONED";
-      }
-
-      return short || "LIVE";
-
-    }
-
-
-    function createMatchCard(match, isLive = false) {
-
-      const fixture =
-        match.fixture || {};
-
-      const teams =
-        match.teams || {};
-
-      const goals =
-        match.goals || {};
-
-      const league =
-        match.league || {};
-
-      const home =
-        teams.home || {};
-
-      const away =
-        teams.away || {};
-
-      const homeScore =
-        goals.home !== null &&
-        goals.home !== undefined
-          ? goals.home
-          : "-";
-
-      const awayScore =
-        goals.away !== null &&
-        goals.away !== undefined
-          ? goals.away
-          : "-";
-
-      const status =
-        getMatchStatus(match);
-
-      const kickoff =
-        fixture.date
-          ? new Date(fixture.date).toLocaleTimeString(
-              [],
-              {
-                hour: "2-digit",
-                minute: "2-digit"
-              }
-            )
-          : "";
-
-      const leagueName =
-        league.name || "Football";
-
-      const homeLogo =
-        home.logo || "";
-
-      const awayLogo =
-        away.logo || "";
-
-
-      return `
-
-        <article class="watch-match-card">
-
-          <div class="match-top">
-
-            <div class="competition-name">
-              ${escapeHtml(leagueName)}
-            </div>
-
-            <div class="match-status ${
-              isLive ? "live-status" : ""
-            }">
-
-              ${
-                isLive
-                  ? `<span class="live-dot"></span>`
-                  : ""
-              }
-
-              ${escapeHtml(status)}
-
-            </div>
-
-          </div>
-
-
-          <div class="match-teams">
-
-            <div class="match-team">
-
-              ${
-                homeLogo
-                  ? `
-                    <img
-                      src="${escapeHtml(homeLogo)}"
-                      alt=""
-                      loading="lazy"
-                    >
-                  `
-                  : `
-                    <div class="team-placeholder">
-                      ⚽
-                    </div>
-                  `
-              }
-
-              <strong>
-                ${escapeHtml(home.name || "Home")}
-              </strong>
-
-            </div>
-
-
-            <div class="match-score">
-
-              <span>
-                ${escapeHtml(homeScore)}
-              </span>
-
-              <small>
-                ${escapeHtml(kickoff)}
-              </small>
-
-              <span>
-                ${escapeHtml(awayScore)}
-              </span>
-
-            </div>
-
-
-            <div class="match-team">
-
-              ${
-                awayLogo
-                  ? `
-                    <img
-                      src="${escapeHtml(awayLogo)}"
-                      alt=""
-                      loading="lazy"
-                    >
-                  `
-                  : `
-                    <div class="team-placeholder">
-                      ⚽
-                    </div>
-                  `
-              }
-
-              <strong>
-                ${escapeHtml(away.name || "Away")}
-              </strong>
-
-            </div>
-
-          </div>
-
-
-          <div class="watch-action">
-
-            ${
-              isLive
-                ? `
-                  <button
-                    type="button"
-                    class="watch-button"
-                    onclick="showStreamMessage('${escapeHtml(
-                      fixture.id || ""
-                    )}')"
-                  >
-                    ▶ WATCH
-                  </button>
-                `
-                : `
-                  <span class="not-live-label">
-                    Match not live yet
-                  </span>
-                `
-            }
-
-          </div>
-
-        </article>
-
-      `;
-
-    }
-
-
-    function showStreamMessage(matchId) {
-
-      const player =
-        document.querySelector(".video-placeholder");
-
-      if (!player) {
-        return;
-      }
-
-      player.innerHTML = `
-
-        <div class="play-circle">
-          ▶
-        </div>
-
-        <h3>
-          Viewing source not connected yet
-        </h3>
-
-        <p>
-          Match ID: ${escapeHtml(matchId)}
-        </p>
-
-        <p>
-          The next step is connecting authorized
-          football streaming providers.
-        </p>
-
-      `;
-
-      window.scrollTo({
-        top:
-          document.querySelector(
-            ".watch-section"
-          ).offsetTop - 20,
-
-        behavior: "smooth"
-      });
-
-    }
-
-
-    async function loadLiveMatches() {
-
-      liveContainer.innerHTML = `
-        <div class="loading-message">
-          Loading live football...
-        </div>
-      `;
-
-
-      try {
-
-        const response =
-          await fetch(
-            "/api/football?endpoint=fixtures&live=all"
-          );
-
-
-        if (!response.ok) {
-          throw new Error(
-            "Unable to connect to football API."
-          );
-        }
-
-
-        const data =
-          await response.json();
-
-
-        const matches =
-          Array.isArray(data.response)
-            ? data.response
-            : [];
-
-
-        if (!matches.length) {
-
-          liveContainer.innerHTML = `
-
-            <div class="empty-message">
-
-              <h3>
-                No live matches right now
-              </h3>
-
-              <p>
-                Check again when football matches
-                are being played.
-              </p>
-
-            </div>
-
-          `;
-
-          return;
-        }
-
-
-        liveContainer.innerHTML =
-          matches
-            .slice(0, 20)
-            .map(
-              match =>
-                createMatchCard(match, true)
-            )
-            .join("");
-
-
-      } catch (error) {
-
-        console.error(error);
-
-        liveContainer.innerHTML = `
-
-          <div class="error-message">
-
-            <h3>
-              Unable to load live football
-            </h3>
-
-            <p>
-              Check the API connection and try again.
-            </p>
-
-          </div>
-
-        `;
-
-      }
-
-    }
-
-
-    async function loadUpcomingMatches() {
-
-      upcomingContainer.innerHTML = `
-
-        <div class="loading-message">
-          Loading upcoming matches...
-        </div>
-
-      `;
-
-
-      try {
-
-        const today =
-          new Date();
-
-
-        const date =
-          today.toISOString()
-            .split("T")[0];
-
-
-        const response =
-          await fetch(
-            `/api/football?endpoint=fixtures&date=${date}`
-          );
-
-
-        if (!response.ok) {
-          throw new Error(
-            "Unable to load fixtures."
-          );
-        }
-
-
-        const data =
-          await response.json();
-
-
-        const matches =
-          Array.isArray(data.response)
-            ? data.response
-            : [];
-
-
-        const upcoming =
-          matches.filter(match => {
-
-            const short =
-              match.fixture &&
-              match.fixture.status
-                ? match.fixture.status.short
-                : "";
-
-            return short === "NS";
-
-          });
-
-
-        if (!upcoming.length) {
-
-          upcomingContainer.innerHTML = `
-
-            <div class="empty-message">
-
-              <h3>
-                No upcoming matches found
-              </h3>
-
-              <p>
-                Check the Matches page for more fixtures.
-              </p>
-
-            </div>
-
-          `;
-
-          return;
-        }
-
-
-        upcomingContainer.innerHTML =
-          upcoming
-            .slice(0, 10)
-            .map(
-              match =>
-                createMatchCard(match, false)
-            )
-            .join("");
-
-
-      } catch (error) {
-
-        console.error(error);
-
-        upcomingContainer.innerHTML = `
-
-          <div class="error-message">
-
-            <h3>
-              Unable to load upcoming matches
-            </h3>
-
-            <p>
-              Check the API connection and try again.
-            </p>
-
-          </div>
-
-        `;
-
-      }
-
-    }
-
-
-    refreshButton.addEventListener(
-      "click",
-      () => {
-
-        loadLiveMatches();
-
-        loadUpcomingMatches();
-
-      }
-    );
-
-
-    loadLiveMatches();
-
-    loadUpcomingMatches();
-
-
-    setInterval(
-      loadLiveMatches,
-      60000
-    );
-
-  </script>
-
-</body>
-</html>
+Jadran LP
+▶ WATCH
+Friendlies Clubs
+58'
+
+Pendikspor
+3 05:30 PM 0
+
+Galatasaray
+▶ WATCH
+Cup
+HT
+
+Tammeka
+2 06:00 PM 0
+
+Viimsi
+▶ WATCH
+COMING UP
+Upcoming Matches
+View all matches →
+Primera A
+UPCOMING
+
+Internacional de Bogota
+- 04:00 AM -
+
+Once Caldas
+Match not live yet
+Friendlies
+UPCOMING
+
+Hungary U18
+- 01:30 PM -
+
+Algeria U18
+Match not live yet
+Friendlies
+UPCOMING
+
+Saudi Arabia U18
+- 01:30 PM -
+
+Italy U18
+Match not live yet
+Super League Women
+UPCOMING
+
+TS Galaxy W
+- 02:30 PM -
+
+Diepkloof W
+Match not live yet
+Liga III - Serie 1
+UPCOMING
+
+Aerostar Bacau
+- 03:00 PM -
+
+Paşcani
+Match not live yet
+Liga III - Serie 1
+UPCOMING
+
+Odorheiu Secuiesc
+- 03:00 PM -
+
+Târgu Secuiesc
+Match not live yet
+Liga III - Serie 2
+UPCOMING
+
+Kids Tâmpa Braşov
+- 03:00 PM -
+
+Corona Braşov
+Match not live yet
+Liga III - Serie 2
+UPCOMING
+
+Sepsi II
+- 03:00 PM -
+
+Olimpic Zărneşti
+Match not live yet
+Liga III - Serie 3
+UPCOMING
+
+Râmnicu Sărat
+- 03:00 PM -
+
+Flacăra Moreni
+Match not live yet
+Liga III - Serie 3
+UPCOMING
+
+Urban Titu
+- 03:00 PM -
+
+Blejoi
+Match not live yet
+COMPETITIONS
+Popular Football
+All competitions →
+🏆
+Premier League
+England
+
+🏆
+Champions League
+Europe
+
+🏆
+La Liga
+Spain
+
+🏆
+Serie A
+Italy
+
+HOW IT WORKS
+Find Your Match
+01
+Choose a match
+Browse live and upcoming football matches.
+
+02
+Select Watch
+Choose an available authorized viewing option.
+
+03
+Watch
+Open the legitimate stream or video provider for the match.
+
+Football Hub Viewing
+Football Hub is being developed to help fans find football matches and legitimate viewing options. Full live broadcasts will only be connected through authorized streaming providers or official video sources.
+
+FOOTBALL HUB
+Everything Football. In One Place.
+
+Home
+Matches
+Leagues
+Teams
+News
+© 2026 FOOTBALL HUB. All rights reserved.
