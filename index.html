@@ -4,594 +4,68 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Football Hub | Everything Football. In One Place.</title>
+  <title>Football Hub | Live Scores, Fixtures, Results & Football News</title>
 
   <meta
     name="description"
-    content="Football Hub - live football scores, fixtures, results, standings, teams, players, statistics and football news."
+    content="Football Hub brings football scores, fixtures, results, standings, competitions, teams, players, statistics and football news together in one place."
   >
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f5f6f8;
-      color: #111827;
-      line-height: 1.5;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    button {
-      font-family: inherit;
-    }
-
-    /* =========================
-       TOP HEADER
-    ========================= */
-
-    header {
-      background: #07152b;
-      color: white;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    .header-inner {
-      max-width: 1200px;
-      margin: auto;
-      min-height: 72px;
-      padding: 0 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 800;
-      font-size: 22px;
-      white-space: nowrap;
-    }
-
-    .logo-ball {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: white;
-      color: #07152b;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 21px;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    nav a {
-      padding: 10px 13px;
-      border-radius: 7px;
-      color: #dbe4f2;
-      font-size: 14px;
-      font-weight: 600;
-      transition: 0.2s ease;
-    }
-
-    nav a:hover,
-    nav a.active {
-      background: rgba(255, 255, 255, 0.1);
-      color: white;
-    }
-
-    .menu-button {
-      display: none;
-      border: 0;
-      background: transparent;
-      color: white;
-      font-size: 27px;
-      cursor: pointer;
-    }
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero {
-      background:
-        linear-gradient(rgba(4, 15, 32, 0.92), rgba(4, 15, 32, 0.92)),
-        radial-gradient(circle at top right, #164e63, #07152b 60%);
-      color: white;
-      padding: 65px 20px 70px;
-    }
-
-    .hero-content {
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .hero-label {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      padding: 7px 12px;
-      border-radius: 20px;
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 18px;
-    }
-
-    .hero h1 {
-      font-size: clamp(36px, 6vw, 68px);
-      line-height: 1.05;
-      max-width: 850px;
-      margin-bottom: 18px;
-      letter-spacing: -1.5px;
-    }
-
-    .hero p {
-      max-width: 680px;
-      color: #cbd5e1;
-      font-size: 18px;
-      margin-bottom: 28px;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .primary-button,
-    .secondary-button {
-      border-radius: 8px;
-      padding: 13px 20px;
-      font-size: 14px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: 0.2s ease;
-    }
-
-    .primary-button {
-      background: white;
-      color: #07152b;
-      border: 1px solid white;
-    }
-
-    .primary-button:hover {
-      transform: translateY(-1px);
-      background: #e5e7eb;
-    }
-
-    .secondary-button {
-      background: transparent;
-      color: white;
-      border: 1px solid #64748b;
-    }
-
-    .secondary-button:hover {
-      background: rgba(255, 255, 255, 0.08);
-    }
-
-    /* =========================
-       MAIN CONTENT
-    ========================= */
-
-    main {
-      max-width: 1200px;
-      margin: auto;
-      padding: 40px 20px 70px;
-    }
-
-    .section {
-      margin-bottom: 42px;
-    }
-
-    .section-heading {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-      margin-bottom: 18px;
-    }
-
-    .section-heading h2 {
-      font-size: 24px;
-      letter-spacing: -0.4px;
-    }
-
-    .section-heading span {
-      color: #64748b;
-      font-size: 13px;
-    }
-
-    /* =========================
-       LIVE AREA
-    ========================= */
-
-    .live-box {
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      padding: 26px;
-      text-align: center;
-      box-shadow: 0 3px 12px rgba(15, 23, 42, 0.05);
-    }
-
-    .live-icon {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
-
-    .live-box h3 {
-      font-size: 19px;
-      margin-bottom: 7px;
-    }
-
-    .live-box p {
-      color: #64748b;
-      font-size: 14px;
-      max-width: 600px;
-      margin: auto;
-    }
-
-    .status {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      margin-top: 16px;
-      font-size: 12px;
-      font-weight: 700;
-      color: #475569;
-    }
-
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #94a3b8;
-    }
-
-    /* =========================
-       QUICK LINKS
-    ========================= */
-
-    .quick-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-    }
-
-    .quick-card {
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 10px;
-      padding: 20px;
-      transition: 0.2s ease;
-    }
-
-    .quick-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
-    }
-
-    .quick-card .icon {
-      font-size: 26px;
-      margin-bottom: 12px;
-    }
-
-    .quick-card h3 {
-      font-size: 16px;
-      margin-bottom: 5px;
-    }
-
-    .quick-card p {
-      font-size: 13px;
-      color: #64748b;
-    }
-
-    /* =========================
-       LEAGUES
-    ========================= */
-
-    .league-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-
-    .league-card {
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 10px;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      transition: 0.2s ease;
-    }
-
-    .league-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
-    }
-
-    .league-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 10px;
-      background: #eef2f7;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      flex-shrink: 0;
-    }
-
-    .league-card h3 {
-      font-size: 15px;
-      margin-bottom: 3px;
-    }
-
-    .league-card p {
-      color: #64748b;
-      font-size: 12px;
-    }
-
-    /* =========================
-       FEATURES
-    ========================= */
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .feature {
-      background: #07152b;
-      color: white;
-      border-radius: 12px;
-      padding: 25px;
-    }
-
-    .feature-icon {
-      font-size: 28px;
-      margin-bottom: 14px;
-    }
-
-    .feature h3 {
-      margin-bottom: 7px;
-      font-size: 17px;
-    }
-
-    .feature p {
-      color: #cbd5e1;
-      font-size: 13px;
-    }
-
-    /* =========================
-       NEWS PLACEHOLDER
-    ========================= */
-
-    .news-box {
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      padding: 25px;
-    }
-
-    .news-message {
-      color: #64748b;
-      font-size: 14px;
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      background: #07152b;
-      color: white;
-      padding: 38px 20px;
-    }
-
-    .footer-inner {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .footer-logo {
-      font-size: 18px;
-      font-weight: 800;
-      margin-bottom: 5px;
-    }
-
-    .footer-text {
-      color: #94a3b8;
-      font-size: 12px;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: #cbd5e1;
-      font-size: 13px;
-    }
-
-    .footer-links a:hover {
-      color: white;
-    }
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width: 900px) {
-      nav {
-        display: none;
-        position: absolute;
-        top: 72px;
-        left: 0;
-        right: 0;
-        background: #07152b;
-        padding: 12px 20px 18px;
-        flex-direction: column;
-        align-items: stretch;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-      }
-
-      nav.show {
-        display: flex;
-      }
-
-      nav a {
-        width: 100%;
-      }
-
-      .menu-button {
-        display: block;
-      }
-
-      .quick-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .league-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .features {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .header-inner {
-        min-height: 64px;
-      }
-
-      nav {
-        top: 64px;
-      }
-
-      .logo {
-        font-size: 19px;
-      }
-
-      .logo-ball {
-        width: 34px;
-        height: 34px;
-      }
-
-      .hero {
-        padding: 48px 18px 55px;
-      }
-
-      .hero h1 {
-        font-size: 40px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      main {
-        padding: 30px 16px 55px;
-      }
-
-      .quick-grid,
-      .league-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .section-heading h2 {
-        font-size: 21px;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- =========================
+  <!-- =====================================================
        HEADER
-  ========================== -->
+       ===================================================== -->
 
-  <header>
-    <div class="header-inner">
+  <header class="site-header">
 
-      <a href="#" class="logo">
+    <div class="container header-inner">
+
+      <a href="index.html" class="logo">
         <span class="logo-ball">⚽</span>
         <span>FOOTBALL HUB</span>
       </a>
 
       <button
         class="menu-button"
-        id="menuButton"
-        aria-label="Open menu"
+        type="button"
+        aria-label="Open navigation menu"
         aria-expanded="false"
       >
         ☰
       </button>
 
-      <nav id="mainNav">
-        <a href="#" class="active">Home</a>
-        <a href="#live">Live Scores</a>
-        <a href="#matches">Matches</a>
-        <a href="#leagues">Leagues</a>
-        <a href="#teams">Teams</a>
-        <a href="#players">Players</a>
-        <a href="#news">News</a>
+      <nav class="main-nav" aria-label="Main navigation">
+
+        <a href="index.html">Home</a>
+        <a href="matches.html">Live Scores</a>
+        <a href="matches.html">Matches</a>
+        <a href="leagues.html">Leagues</a>
+        <a href="teams.html">Teams</a>
+        <a href="players.html">Players</a>
+        <a href="news.html">News</a>
+
       </nav>
 
     </div>
+
   </header>
 
 
-  <!-- =========================
+  <!-- =====================================================
        HERO
-  ========================== -->
+       ===================================================== -->
 
   <section class="hero">
-    <div class="hero-content">
 
-      <div class="hero-label">
-        ⚽ THE HOME OF FOOTBALL
-      </div>
+    <div class="container hero-content">
+
+      <span class="hero-label">
+        THE WORLD OF FOOTBALL
+      </span>
 
       <h1>
         Everything Football.<br>
@@ -599,251 +73,496 @@
       </h1>
 
       <p>
-        Follow matches, competitions, teams, players, statistics and
-        football news from around the world.
+        Follow live scores, fixtures, results, standings,
+        competitions, teams, players, statistics and football news.
       </p>
 
       <div class="hero-actions">
-        <a href="#live" class="primary-button">
+
+        <a href="matches.html" class="primary-button">
           View Live Scores
         </a>
 
-        <a href="#leagues" class="secondary-button">
+        <a href="leagues.html" class="secondary-button">
           Explore Leagues
         </a>
+
       </div>
 
     </div>
+
   </section>
 
 
-  <!-- =========================
-       MAIN
-  ========================== -->
+  <!-- =====================================================
+       MAIN CONTENT
+       ===================================================== -->
 
   <main>
 
-    <!-- LIVE -->
+    <div class="container">
 
-    <section class="section" id="live">
 
-      <div class="section-heading">
-        <h2>🔴 Live Scores</h2>
-        <span>Real-time football</span>
-      </div>
+      <!-- =================================================
+           LIVE SCORES
+           ================================================= -->
 
-      <div class="live-box">
+      <section class="section">
 
-        <div class="live-icon">⚽</div>
+        <div class="section-heading">
 
-        <h3>Live matches will appear here</h3>
+          <h2>Live Scores</h2>
 
-        <p>
-          This area is ready to connect to a real football data service.
-          Once connected, live matches, scores and match events will be
-          displayed here automatically.
-        </p>
+          <span>
+            Real-time football
+          </span>
 
-        <div class="status">
-          <span class="status-dot"></span>
-          Live data connection pending
         </div>
 
-      </div>
+        <div class="live-box">
 
-    </section>
-
-
-    <!-- QUICK ACCESS -->
-
-    <section class="section" id="matches">
-
-      <div class="section-heading">
-        <h2>Quick Access</h2>
-        <span>Football at a glance</span>
-      </div>
-
-      <div class="quick-grid">
-
-        <a href="#matches" class="quick-card">
-          <div class="icon">📅</div>
-          <h3>Fixtures</h3>
-          <p>See upcoming football matches.</p>
-        </a>
-
-        <a href="#matches" class="quick-card">
-          <div class="icon">🏁</div>
-          <h3>Results</h3>
-          <p>Follow completed match results.</p>
-        </a>
-
-        <a href="#leagues" class="quick-card">
-          <div class="icon">📊</div>
-          <h3>Standings</h3>
-          <p>Follow league tables and positions.</p>
-        </a>
-
-        <a href="#players" class="quick-card">
-          <div class="icon">🥇</div>
-          <h3>Top Scorers</h3>
-          <p>Track leading goal scorers.</p>
-        </a>
-
-      </div>
-
-    </section>
-
-
-    <!-- LEAGUES -->
-
-    <section class="section" id="leagues">
-
-      <div class="section-heading">
-        <h2>🏆 Popular Competitions</h2>
-        <span>Explore football leagues</span>
-      </div>
-
-      <div class="league-grid">
-
-        <a href="#" class="league-card">
-          <div class="league-icon">🏴</div>
-          <div>
-            <h3>Premier League</h3>
-            <p>England</p>
+          <div class="live-icon">
+            ⚽
           </div>
-        </a>
 
-        <a href="#" class="league-card">
-          <div class="league-icon">🇪🇸</div>
-          <div>
-            <h3>La Liga</h3>
-            <p>Spain</p>
-          </div>
-        </a>
+          <h3>
+            Live matches will appear here
+          </h3>
 
-        <a href="#" class="league-card">
-          <div class="league-icon">🇮🇹</div>
-          <div>
-            <h3>Serie A</h3>
-            <p>Italy</p>
-          </div>
-        </a>
-
-        <a href="#" class="league-card">
-          <div class="league-icon">🇩🇪</div>
-          <div>
-            <h3>Bundesliga</h3>
-            <p>Germany</p>
-          </div>
-        </a>
-
-        <a href="#" class="league-card">
-          <div class="league-icon">🇫🇷</div>
-          <div>
-            <h3>Ligue 1</h3>
-            <p>France</p>
-          </div>
-        </a>
-
-        <a href="#" class="league-card">
-          <div class="league-icon">🌍</div>
-          <div>
-            <h3>Champions League</h3>
-            <p>Europe</p>
-          </div>
-        </a>
-
-      </div>
-
-    </section>
-
-
-    <!-- TEAMS / PLAYERS -->
-
-    <section class="section" id="teams">
-
-      <div class="section-heading">
-        <h2>Football Database</h2>
-        <span>Teams and players</span>
-      </div>
-
-      <div class="features">
-
-        <div class="feature">
-          <div class="feature-icon">🏟️</div>
-          <h3>Teams</h3>
           <p>
-            Team profiles, fixtures, results, standings and statistics.
+            Football Hub is being connected to a real football
+            data service. Live scores, match events and current
+            match information will appear here once the data
+            connection is active.
           </p>
+
+          <div class="status">
+
+            <span class="status-dot"></span>
+
+            <span>
+              Live data connection pending
+            </span>
+
+          </div>
+
         </div>
 
-        <div class="feature" id="players">
-          <div class="feature-icon">👤</div>
-          <h3>Players</h3>
-          <p>
-            Player profiles, appearances, goals, assists and statistics.
-          </p>
+      </section>
+
+
+      <!-- =================================================
+           QUICK ACCESS
+           ================================================= -->
+
+      <section class="section">
+
+        <div class="section-heading">
+
+          <h2>Quick Access</h2>
+
+          <span>
+            Football information
+          </span>
+
         </div>
 
-        <div class="feature">
-          <div class="feature-icon">📈</div>
-          <h3>Statistics</h3>
-          <p>
-            Match and competition statistics from real football data.
-          </p>
+        <div class="quick-grid">
+
+
+          <a href="matches.html" class="card quick-card card-hover">
+
+            <div class="icon">
+              📅
+            </div>
+
+            <h3>
+              Fixtures
+            </h3>
+
+            <p>
+              Upcoming football matches.
+            </p>
+
+          </a>
+
+
+          <a href="matches.html" class="card quick-card card-hover">
+
+            <div class="icon">
+              🏆
+            </div>
+
+            <h3>
+              Results
+            </h3>
+
+            <p>
+              Completed match results.
+            </p>
+
+          </a>
+
+
+          <a href="leagues.html" class="card quick-card card-hover">
+
+            <div class="icon">
+              📊
+            </div>
+
+            <h3>
+              Standings
+            </h3>
+
+            <p>
+              League tables and positions.
+            </p>
+
+          </a>
+
+
+          <a href="players.html" class="card quick-card card-hover">
+
+            <div class="icon">
+              ⚽
+            </div>
+
+            <h3>
+              Top Scorers
+            </h3>
+
+            <p>
+              Player scoring statistics.
+            </p>
+
+          </a>
+
+
         </div>
 
-      </div>
-
-    </section>
+      </section>
 
 
-    <!-- NEWS -->
+      <!-- =================================================
+           POPULAR COMPETITIONS
+           ================================================= -->
 
-    <section class="section" id="news">
+      <section class="section">
 
-      <div class="section-heading">
-        <h2>📰 Football News</h2>
-        <span>Latest updates</span>
-      </div>
+        <div class="section-heading">
 
-      <div class="news-box">
+          <h2>
+            Popular Competitions
+          </h2>
 
-        <p class="news-message">
-          Football news will be connected to a reliable news source in a
-          later stage. We will not use fake news or invented stories.
-        </p>
+          <span>
+            Explore football leagues
+          </span>
 
-      </div>
+        </div>
 
-    </section>
+        <div class="league-grid">
+
+
+          <a href="leagues.html" class="card league-card card-hover">
+
+            <div class="league-icon">
+              🏆
+            </div>
+
+            <div>
+
+              <h3>
+                Premier League
+              </h3>
+
+              <p>
+                England
+              </p>
+
+            </div>
+
+          </a>
+
+
+          <a href="leagues.html" class="card league-card card-hover">
+
+            <div class="league-icon">
+              🏆
+            </div>
+
+            <div>
+
+              <h3>
+                La Liga
+              </h3>
+
+              <p>
+                Spain
+              </p>
+
+            </div>
+
+          </a>
+
+
+          <a href="leagues.html" class="card league-card card-hover">
+
+            <div class="league-icon">
+              🏆
+            </div>
+
+            <div>
+
+              <h3>
+                Serie A
+              </h3>
+
+              <p>
+                Italy
+              </p>
+
+            </div>
+
+          </a>
+
+
+          <a href="leagues.html" class="card league-card card-hover">
+
+            <div class="league-icon">
+              🏆
+            </div>
+
+            <div>
+
+              <h3>
+                Bundesliga
+              </h3>
+
+              <p>
+                Germany
+              </p>
+
+            </div>
+
+          </a>
+
+
+          <a href="leagues.html" class="card league-card card-hover">
+
+            <div class="league-icon">
+              🏆
+            </div>
+
+            <div>
+
+              <h3>
+                Ligue 1
+              </h3>
+
+              <p>
+                France
+              </p>
+
+            </div>
+
+          </a>
+
+
+          <a href="leagues.html" class="card league-card card-hover">
+
+            <div class="league-icon">
+              🏆
+            </div>
+
+            <div>
+
+              <h3>
+                UEFA Champions League
+              </h3>
+
+              <p>
+                Europe
+              </p>
+
+            </div>
+
+          </a>
+
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           FOOTBALL DATABASE
+           ================================================= -->
+
+      <section class="section">
+
+        <div class="section-heading">
+
+          <h2>
+            Football Database
+          </h2>
+
+          <span>
+            Explore the game
+          </span>
+
+        </div>
+
+        <div class="features">
+
+
+          <a href="teams.html" class="feature card-hover">
+
+            <div class="feature-icon">
+              🏟️
+            </div>
+
+            <h3>
+              Teams
+            </h3>
+
+            <p>
+              Explore football clubs, competitions,
+              squads and team information.
+            </p>
+
+          </a>
+
+
+          <a href="players.html" class="feature card-hover">
+
+            <div class="feature-icon">
+              👤
+            </div>
+
+            <h3>
+              Players
+            </h3>
+
+            <p>
+              Discover players, positions,
+              statistics and career information.
+            </p>
+
+          </a>
+
+
+          <a href="matches.html" class="feature card-hover">
+
+            <div class="feature-icon">
+              📈
+            </div>
+
+            <h3>
+              Statistics
+            </h3>
+
+            <p>
+              Follow match statistics,
+              league information and player data.
+            </p>
+
+          </a>
+
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           NEWS
+           ================================================= -->
+
+      <section class="section">
+
+        <div class="section-heading">
+
+          <h2>
+            Football News
+          </h2>
+
+          <span>
+            Latest stories
+          </span>
+
+        </div>
+
+        <div class="card news-box">
+
+          <p class="news-message">
+            Football news will be connected to a reliable
+            news source later. No fake news or invented stories
+            are displayed on Football Hub.
+          </p>
+
+        </div>
+
+      </section>
+
+
+    </div>
 
   </main>
 
 
-  <!-- =========================
+  <!-- =====================================================
        FOOTER
-  ========================== -->
+       ===================================================== -->
 
-  <footer>
+  <footer class="site-footer">
 
-    <div class="footer-inner">
+    <div class="container footer-inner">
 
       <div>
-        <div class="footer-logo">⚽ FOOTBALL HUB</div>
+
+        <div class="footer-logo">
+          FOOTBALL HUB
+        </div>
+
         <div class="footer-text">
           Everything Football. In One Place.
         </div>
+
+        <div class="footer-text">
+          © <span data-current-year></span> Football Hub.
+          All rights reserved.
+        </div>
+
       </div>
 
+
       <div class="footer-links">
-        <a href="#">Home</a>
-        <a href="#live">Live Scores</a>
-        <a href="#matches">Matches</a>
-        <a href="#leagues">Leagues</a>
-        <a href="#teams">Teams</a>
-        <a href="#players">Players</a>
-        <a href="#news">News</a>
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="matches.html">
+          Matches
+        </a>
+
+        <a href="leagues.html">
+          Leagues
+        </a>
+
+        <a href="teams.html">
+          Teams
+        </a>
+
+        <a href="players.html">
+          Players
+        </a>
+
+        <a href="news.html">
+          News
+        </a>
+
       </div>
 
     </div>
@@ -851,31 +570,11 @@
   </footer>
 
 
-  <!-- =========================
+  <!-- =====================================================
        JAVASCRIPT
-  ========================== -->
+       ===================================================== -->
 
-  <script>
-    const menuButton = document.getElementById("menuButton");
-    const mainNav = document.getElementById("mainNav");
-
-    menuButton.addEventListener("click", function () {
-      mainNav.classList.toggle("show");
-
-      const isOpen = mainNav.classList.contains("show");
-
-      menuButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
-      menuButton.textContent = isOpen ? "✕" : "☰";
-    });
-
-    document.querySelectorAll("#mainNav a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        mainNav.classList.remove("show");
-        menuButton.setAttribute("aria-expanded", "false");
-        menuButton.textContent = "☰";
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 
 </body>
 </html>
