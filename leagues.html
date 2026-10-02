@@ -4,21 +4,167 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Leagues | Football Hub</title>
+  <title>Football Hub | Football Leagues & Competitions</title>
 
   <meta
     name="description"
-    content="Explore football leagues and competitions from around the world on Football Hub."
+    content="Explore real football leagues and competitions from around the world."
   >
 
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    .league-controls {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.04);
+    }
+
+    .league-controls-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .league-search {
+      flex: 1;
+      min-width: 220px;
+      border: 1px solid #d1d5db;
+      border-radius: 9px;
+      padding: 12px 14px;
+      font-size: 15px;
+      outline: none;
+    }
+
+    .league-search:focus {
+      border-color: #111827;
+    }
+
+    .league-select {
+      min-width: 180px;
+      border: 1px solid #d1d5db;
+      border-radius: 9px;
+      padding: 12px 14px;
+      background: #ffffff;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .league-status {
+      margin-top: 14px;
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    .real-leagues-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .real-league-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 17px;
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.04);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .real-league-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .real-league-logo {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .real-league-info {
+      min-width: 0;
+    }
+
+    .real-league-info h3 {
+      margin: 0 0 5px;
+      font-size: 16px;
+      color: #111827;
+    }
+
+    .real-league-info p {
+      margin: 0;
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    .league-type {
+      display: inline-block;
+      margin-top: 7px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #6b7280;
+    }
+
+    .loading-state,
+    .empty-state,
+    .error-state {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 30px 20px;
+      text-align: center;
+      color: #6b7280;
+    }
+
+    .error-state {
+      color: #b91c1c;
+    }
+
+    .league-count {
+      margin-bottom: 16px;
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    @media (max-width: 1000px) {
+      .real-leagues-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 650px) {
+      .real-leagues-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .league-controls-row {
+        flex-direction: column;
+      }
+
+      .league-search,
+      .league-select {
+        width: 100%;
+        min-width: 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- =====================================================
+  <!-- ================================
        HEADER
-       ===================================================== -->
+  ================================= -->
 
   <header class="site-header">
 
@@ -32,14 +178,13 @@
       <button
         class="menu-button"
         type="button"
-        aria-label="Open navigation menu"
+        aria-label="Open navigation"
         aria-expanded="false"
       >
         ☰
       </button>
 
-      <nav class="main-nav" aria-label="Main navigation">
-
+      <nav class="main-nav">
         <a href="index.html">Home</a>
         <a href="matches.html">Live Scores</a>
         <a href="matches.html">Matches</a>
@@ -47,7 +192,6 @@
         <a href="teams.html">Teams</a>
         <a href="players.html">Players</a>
         <a href="news.html">News</a>
-
       </nav>
 
     </div>
@@ -55,821 +199,826 @@
   </header>
 
 
-  <!-- =====================================================
-       PAGE HEADER
-       ===================================================== -->
-
-  <section class="page-header">
-
-    <div class="container">
-
-      <h1>
-        Football Leagues
-      </h1>
-
-      <p>
-        Explore major domestic leagues, European competitions
-        and international football tournaments.
-      </p>
-
-    </div>
-
-  </section>
-
-
-  <!-- =====================================================
-       MAIN CONTENT
-       ===================================================== -->
+  <!-- ================================
+       MAIN
+  ================================= -->
 
   <main>
 
-    <div class="container">
+    <section class="page-header">
+
+      <div class="container">
+
+        <span class="hero-label">
+          FOOTBALL HUB
+        </span>
+
+        <h1>
+          Football Leagues
+        </h1>
+
+        <p>
+          Explore real football leagues and competitions
+          from around the world.
+        </p>
+
+      </div>
+
+    </section>
 
 
-      <!-- =================================================
-           SEARCH
-           ================================================= -->
+    <section class="main-section">
 
-      <section class="section">
+      <div class="container">
 
-        <div class="search-box">
+        <!-- CONTROLS -->
 
-          <input
-            type="search"
-            id="league-search"
-            placeholder="Search leagues and competitions..."
-            aria-label="Search leagues"
+        <div class="league-controls">
+
+          <div class="league-controls-row">
+
+            <input
+              type="search"
+              id="league-search"
+              class="league-search"
+              placeholder="Search leagues or competitions..."
+              autocomplete="off"
+            >
+
+            <select
+              id="country-filter"
+              class="league-select"
+            >
+              <option value="">All Countries</option>
+            </select>
+
+            <select
+              id="type-filter"
+              class="league-select"
+            >
+              <option value="">All Types</option>
+              <option value="League">League</option>
+              <option value="Cup">Cup</option>
+            </select>
+
+          </div>
+
+          <div
+            id="league-status"
+            class="league-status"
           >
+            Loading real football competitions...
+          </div>
 
         </div>
 
-      </section>
 
-
-      <!-- =================================================
-           ENGLAND
-           ================================================= -->
-
-      <section class="section">
+        <!-- REAL LEAGUES -->
 
         <div class="section-heading">
 
-          <h2>
-            England
-          </h2>
+          <div>
 
-          <span>
-            Domestic competitions
-          </span>
+            <span class="hero-label">
+              LIVE DATABASE
+            </span>
 
-        </div>
+            <h2>
+              Current Competitions
+            </h2>
 
-        <div class="league-grid">
-
-
-          <a
-            href="matches.html"
-            class="card league-card card-hover"
-            data-league="Premier League England"
-          >
-
-            <div class="league-icon">
-              🏆
-            </div>
-
-            <div>
-
-              <h3>
-                Premier League
-              </h3>
-
-              <p>
-                England
-              </p>
-
-            </div>
-
-          </a>
-
-
-          <a
-            href="matches.html"
-            class="card league-card card-hover"
-            data-league="Championship England"
-          >
-
-            <div class="league-icon">
-              🏆
-            </div>
-
-            <div>
-
-              <h3>
-                Championship
-              </h3>
-
-              <p>
-                England
-              </p>
-
-            </div>
-
-          </a>
-
+          </div>
 
         </div>
 
-      </section>
+
+        <div
+          id="league-count"
+          class="league-count"
+        >
+          Loading competitions...
+        </div>
 
 
-      <!-- =================================================
-           SPAIN
-           ================================================= -->
+        <div
+          id="real-leagues"
+          class="real-leagues-grid"
+        >
 
-      <section class="section">
+          <div class="loading-state">
+            Loading real football leagues...
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================================
+         FOOTBALL COMPETITIONS
+    ================================= -->
+
+    <section class="main-section">
+
+      <div class="container">
 
         <div class="section-heading">
 
-          <h2>
-            Spain
-          </h2>
+          <div>
 
-          <span>
-            Domestic competitions
-          </span>
+            <span class="hero-label">
+              FOOTBALL COMPETITIONS
+            </span>
+
+            <h2>
+              Explore Football
+            </h2>
+
+          </div>
 
         </div>
 
-        <div class="league-grid">
+
+        <div class="feature-grid">
+
+          <a
+            href="matches.html"
+            class="feature-card"
+          >
+
+            <span class="feature-card-icon">
+              ⚽
+            </span>
+
+            <h3>
+              Fixtures
+            </h3>
+
+            <p>
+              View matches from football competitions
+              around the world.
+            </p>
+
+          </a>
 
 
           <a
             href="matches.html"
-            class="card league-card card-hover"
-            data-league="La Liga Spain"
+            class="feature-card"
           >
 
-            <div class="league-icon">
+            <span class="feature-card-icon">
               🏆
-            </div>
+            </span>
 
-            <div>
+            <h3>
+              Results
+            </h3>
 
-              <h3>
-                La Liga
-              </h3>
-
-              <p>
-                Spain
-              </p>
-
-            </div>
+            <p>
+              Follow completed football matches
+              and competition results.
+            </p>
 
           </a>
 
 
           <a
-            href="matches.html"
-            class="card league-card card-hover"
-            data-league="Segunda Division Spain"
+            href="teams.html"
+            class="feature-card"
           >
 
-            <div class="league-icon">
-              🏆
-            </div>
+            <span class="feature-card-icon">
+              🛡️
+            </span>
 
-            <div>
+            <h3>
+              Teams
+            </h3>
 
-              <h3>
-                Segunda División
-              </h3>
-
-              <p>
-                Spain
-              </p>
-
-            </div>
+            <p>
+              Explore teams participating in
+              football competitions.
+            </p>
 
           </a>
-
 
         </div>
 
-      </section>
+      </div>
 
-
-      <!-- =================================================
-           ITALY
-           ================================================= -->
-
-      <section class="section">
-
-        <div class="section-heading">
-
-          <h2>
-            Italy
-          </h2>
-
-          <span>
-            Domestic competitions
-          </span>
-
-        </div>
-
-        <div class="league-grid">
-
-
-          <a
-            href="matches.html"
-            class="card league-card card-hover"
-            data-league="Serie A Italy"
-          >
-
-            <div class="league-icon">
-              🏆
-            </div>
-
-            <div>
-
-              <h3>
-                Serie A
-              </h3>
-
-              <p>
-                Italy
-              </p>
-
-            </div>
-
-          </a>
-
-
-          <a
-            href="matches.html"
-            class="card league-card card-hover"
-            data-league="Serie B Italy"
-          >
-
-            <div class="league-icon">
-              🏆
-            </div>
-
-            <div>
-
-              <h3>
-                Serie B
-              </h3>
-
-              <p>
-                Italy
-              </p>
-
-            </div>
-
-          </a>
-
-
-        </div>
-
-      </section>
-
-
-      <!-- =================================================
-           GERMANY
-           ================================================= -->
-
-      <section class="section">
-
-        <div class="section-heading">
-
-          <h2>
-            Germany
-          </h2>
-
-          <span>
-            Domestic competitions
-          </span>
-
-        </div>
-
-        <div class="league-grid">
-
-
-          <a
-            href="matches.html"
-            class="card league-card card-hover"
-            data-league="Bundesliga Germany"
-          >
-
-            <div class="league-icon">
-              🏆
-            </div>
-
-            <div>
-
-              <h3>
-                Bundesliga
-              </h3>
-
-              <p>
-                Germany
-              </p>
-
-            </div>
-
-          </a>
-
-
-          <a
-            href="matches.html"
-            class="card league-card card-hover"
-            data-league="2 Bundesliga Germany"
-          >
-
-            <div class="league-icon">
-              🏆
-            </div>
-
-            <div>
-
-              <h3>
-                2. Bundesliga
-              </h3>
-
-              <p>
-                Germany
-              </p>
-
-            </div>
-
-          </a>
-
-
-        </div>
-
-      </section>
-
-
-      <!-- =================================================
-           FRANCE
-           ================================================= -->
-
-      <section class="section">
-
-        <div class="section-heading">
-
-          <h2>
-            France
-          </h2>
-
-          <span>
-            Domestic competitions
-          </span>
-
-        </div>
-
-        <div class="league-grid">
-
-
-          <a
-            href="matches.html"
-            class="card league-card card-hover"
-            data-league="Ligue 1 France"
-          >
-
-            <div class="league-icon">
-              🏆
-            </div>
-
-            <div>
-
-              <h3>
-                Ligue 1
-              </h3>
-
-              <p>
-                France
-              </p>
-
-            </div>
-
-          </a>
-
-
-          <a
-            href="matches.html"
-            class="card league-card card-hover"
-            data-league="Ligue 2 France"
-          >
-
-            <div class="league-icon">
-              🏆
-            </div>
-
-            <div>
-
-              <h3>
-                Ligue 2
-              </h3>
-
-              <p>
-                France
-              </p>
-
-            </div>
-
-          </a>
-
-
-        </div>
-
-      </section>
-
-
-      <!-- =================================================
-           EUROPE
-           ================================================= -->
-
-      <section class="section">
-
-        <div class="section-heading">
-
-          <h2>
-            European Competitions
-          </h2>
-
-          <span>
-            UEFA competitions
-          </span>
-
-        </div>
-
-        <div class="league-grid">
-
-
-          <a
-            href="matches.html"
-            class="card league-card card-hover"
-            data-league="UEFA Champions League Europe"
-          >
-
-            <div class="league-icon">
-              🏆
-            </div>
-
-            <div>
-
-              <h3>
-                UEFA Champions League
-              </h3>
-
-              <p>
-                Europe
-              </p>
-
-            </div>
-
-          </a>
-
-
-          <a
-            href="matches.html"
-            class="card league-card card-hover"
-            data-league="UEFA Europa League Europe"
-          >
-
-            <div class="league-icon">
-              🏆
-            </div>
-
-            <div>
-
-              <h3>
-                UEFA Europa League
-              </h3>
-
-              <p>
-                Europe
-              </p>
-
-            </div>
-
-          </a>
-
-
-          <a
-            href="matches.html"
-            class="card league-card card-hover"
-            data-league="UEFA Conference League Europe"
-          >
-
-            <div class="league-icon">
-              🏆
-            </div>
-
-            <div>
-
-              <h3>
-                UEFA Conference League
-              </h3>
-
-              <p>
-                Europe
-              </p>
-
-            </div>
-
-          </a>
-
-
-          <a
-            href="matches.html"
-            class="card league-card card-hover"
-            data-league="UEFA Nations League Europe"
-          >
-
-            <div class="league-icon">
-              🏆
-            </div>
-
-            <div>
-
-              <h3>
-                UEFA Nations League
-              </h3>
-
-              <p>
-                Europe
-              </p>
-
-            </div>
-
-          </a>
-
-
-        </div>
-
-      </section>
-
-
-      <!-- =================================================
-           INTERNATIONAL FOOTBALL
-           ================================================= -->
-
-      <section class="section">
-
-        <div class="section-heading">
-
-          <h2>
-            International Football
-          </h2>
-
-          <span>
-            National teams
-          </span>
-
-        </div>
-
-        <div class="league-grid">
-
-
-          <a
-            href="matches.html"
-            class="card league-card card-hover"
-            data-league="FIFA World Cup International"
-          >
-
-            <div class="league-icon">
-              🌍
-            </div>
-
-            <div>
-
-              <h3>
-                FIFA World Cup
-              </h3>
-
-              <p>
-                International
-              </p>
-
-            </div>
-
-          </a>
-
-
-          <a
-            href="matches.html"
-            class="card league-card card-hover"
-            data-league="FIFA Women's World Cup International"
-          >
-
-            <div class="league-icon">
-              🌍
-            </div>
-
-            <div>
-
-              <h3>
-                FIFA Women's World Cup
-              </h3>
-
-              <p>
-                International
-              </p>
-
-            </div>
-
-          </a>
-
-
-          <a
-            href="matches.html"
-            class="card league-card card-hover"
-            data-league="Africa Cup of Nations AFCON"
-          >
-
-            <div class="league-icon">
-              🌍
-            </div>
-
-            <div>
-
-              <h3>
-                Africa Cup of Nations
-              </h3>
-
-              <p>
-                Africa
-              </p>
-
-            </div>
-
-          </a>
-
-
-          <a
-            href="matches.html"
-            class="card league-card card-hover"
-            data-league="Copa America South America"
-          >
-
-            <div class="league-icon">
-              🌎
-            </div>
-
-            <div>
-
-              <h3>
-                Copa América
-              </h3>
-
-              <p>
-                South America
-              </p>
-
-            </div>
-
-          </a>
-
-
-        </div>
-
-      </section>
-
-
-      <!-- =================================================
-           MORE COMPETITIONS
-           ================================================= -->
-
-      <section class="section">
-
-        <div class="section-heading">
-
-          <h2>
-            More Competitions
-          </h2>
-
-          <span>
-            Global football
-          </span>
-
-        </div>
-
-        <div class="no-results">
-
-          <p>
-            More leagues and competitions will be added as
-            Football Hub's real football data database expands.
-          </p>
-
-        </div>
-
-      </section>
-
-
-    </div>
+    </section>
 
   </main>
 
 
-  <!-- =====================================================
+  <!-- ================================
        FOOTER
-       ===================================================== -->
+  ================================= -->
 
   <footer class="site-footer">
 
-    <div class="container footer-inner">
+    <div class="container">
 
-      <div>
-
-        <div class="footer-logo">
-          FOOTBALL HUB
-        </div>
-
-        <div class="footer-text">
-          Everything Football. In One Place.
-        </div>
-
-        <div class="footer-text">
-          © <span data-current-year></span> Football Hub.
-          All rights reserved.
-        </div>
-
-      </div>
-
-
-      <div class="footer-links">
-
-        <a href="index.html">
-          Home
-        </a>
-
-        <a href="matches.html">
-          Matches
-        </a>
-
-        <a href="leagues.html">
-          Leagues
-        </a>
-
-        <a href="teams.html">
-          Teams
-        </a>
-
-        <a href="players.html">
-          Players
-        </a>
-
-        <a href="news.html">
-          News
-        </a>
-
-      </div>
+      <p>
+        © <span data-current-year></span>
+        Football Hub.
+        Everything Football. In One Place.
+      </p>
 
     </div>
 
   </footer>
 
 
-  <!-- =====================================================
-       LEAGUE SEARCH
-       ===================================================== -->
+  <script src="script.js"></script>
+
+
+  <!-- ================================
+       REAL LEAGUE DATA
+  ================================= -->
 
   <script>
 
-    const leagueSearch = document.getElementById("league-search");
+    const LEAGUES_API_ENDPOINT =
+      "/api/football";
 
-    if (leagueSearch) {
 
-      leagueSearch.addEventListener("input", function () {
+    const leagueContainer =
+      document.getElementById(
+        "real-leagues"
+      );
 
-        const searchTerm = this.value.toLowerCase().trim();
 
-        const leagueCards =
-          document.querySelectorAll("[data-league]");
+    const leagueSearch =
+      document.getElementById(
+        "league-search"
+      );
 
-        leagueCards.forEach(function (card) {
 
-          const leagueName =
-            card.getAttribute("data-league").toLowerCase();
+    const countryFilter =
+      document.getElementById(
+        "country-filter"
+      );
 
-          if (leagueName.includes(searchTerm)) {
-            card.style.display = "";
-          } else {
-            card.style.display = "none";
-          }
 
-        });
+    const typeFilter =
+      document.getElementById(
+        "type-filter"
+      );
+
+
+    const leagueStatus =
+      document.getElementById(
+        "league-status"
+      );
+
+
+    const leagueCount =
+      document.getElementById(
+        "league-count"
+      );
+
+
+    let allLeagues = [];
+
+
+    /* ================================
+       ESCAPE HTML
+    ================================= */
+
+    function escapeHtml(value) {
+
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+
+    }
+
+
+    function escapeAttribute(value) {
+
+      return escapeHtml(value);
+
+    }
+
+
+    /* ================================
+       GET CURRENT LEAGUES
+    ================================= */
+
+    async function getLeagues() {
+
+      const url =
+        `${LEAGUES_API_ENDPOINT}?endpoint=leagues&current=true`;
+
+
+      const response =
+        await fetch(url);
+
+
+      let data;
+
+
+      try {
+
+        data =
+          await response.json();
+
+      } catch (error) {
+
+        throw new Error(
+          "Invalid response from football API."
+        );
+
+      }
+
+
+      if (!response.ok) {
+
+        if (data && data.errors) {
+
+          throw new Error(
+            Object.values(data.errors).join(", ")
+          );
+
+        }
+
+        throw new Error(
+          data?.error ||
+          "Unable to load leagues."
+        );
+
+      }
+
+
+      if (
+        data.errors &&
+        Object.keys(data.errors).length > 0
+      ) {
+
+        throw new Error(
+          Object.values(data.errors).join(", ")
+        );
+
+      }
+
+
+      return data.response || [];
+
+    }
+
+
+    /* ================================
+       BUILD COUNTRY FILTER
+    ================================= */
+
+    function buildCountryFilter(leagues) {
+
+      const countries =
+        new Set();
+
+
+      leagues.forEach(item => {
+
+        const country =
+          item?.country?.name;
+
+
+        if (country) {
+          countries.add(country);
+        }
+
+      });
+
+
+      const sortedCountries =
+        Array.from(countries)
+          .sort((a, b) =>
+            a.localeCompare(b)
+          );
+
+
+      countryFilter.innerHTML = `
+        <option value="">
+          All Countries
+        </option>
+      `;
+
+
+      sortedCountries.forEach(country => {
+
+        const option =
+          document.createElement("option");
+
+
+        option.value =
+          country;
+
+
+        option.textContent =
+          country;
+
+
+        countryFilter.appendChild(
+          option
+        );
 
       });
 
     }
 
+
+    /* ================================
+       CREATE LEAGUE CARD
+    ================================= */
+
+    function createLeagueCard(item) {
+
+      const league =
+        item?.league || {};
+
+
+      const country =
+        item?.country || {};
+
+
+      const card =
+        document.createElement("article");
+
+
+      card.className =
+        "real-league-card";
+
+
+      card.dataset.name =
+        (league.name || "")
+          .toLowerCase();
+
+
+      card.dataset.country =
+        (country.name || "")
+          .toLowerCase();
+
+
+      card.dataset.type =
+        (league.type || "")
+          .toLowerCase();
+
+
+      card.innerHTML = `
+
+        ${
+          league.logo
+            ? `
+              <img
+                src="${escapeAttribute(
+                  league.logo
+                )}"
+                alt="${escapeAttribute(
+                  league.name || "League"
+                )}"
+                class="real-league-logo"
+                loading="lazy"
+              >
+            `
+            : `
+              <div
+                class="real-league-logo"
+                aria-hidden="true"
+              >
+                ⚽
+              </div>
+            `
+        }
+
+
+        <div class="real-league-info">
+
+          <h3>
+            ${escapeHtml(
+              league.name ||
+              "Unknown Competition"
+            )}
+          </h3>
+
+          <p>
+            ${escapeHtml(
+              country.name ||
+              "International"
+            )}
+          </p>
+
+          <span class="league-type">
+            ${escapeHtml(
+              league.type ||
+              "Competition"
+            )}
+          </span>
+
+        </div>
+
+      `;
+
+
+      return card;
+
+    }
+
+
+    /* ================================
+       DISPLAY LEAGUES
+    ================================= */
+
+    function displayLeagues(leagues) {
+
+      leagueContainer.innerHTML = "";
+
+
+      leagueCount.textContent =
+        `${leagues.length} ${
+          leagues.length === 1
+            ? "competition"
+            : "competitions"
+        }`;
+
+
+      if (!leagues.length) {
+
+        leagueContainer.innerHTML = `
+
+          <div class="empty-state">
+
+            <strong>
+              No competitions found.
+            </strong>
+
+            <p>
+              Try another search or filter.
+            </p>
+
+          </div>
+
+        `;
+
+        return;
+
+      }
+
+
+      leagues.forEach(item => {
+
+        leagueContainer.appendChild(
+          createLeagueCard(item)
+        );
+
+      });
+
+    }
+
+
+    /* ================================
+       FILTER LEAGUES
+    ================================= */
+
+    function filterLeagues() {
+
+      const search =
+        leagueSearch.value
+          .trim()
+          .toLowerCase();
+
+
+      const country =
+        countryFilter.value
+          .trim()
+          .toLowerCase();
+
+
+      const type =
+        typeFilter.value
+          .trim()
+          .toLowerCase();
+
+
+      const filtered =
+        allLeagues.filter(item => {
+
+          const league =
+            item?.league || {};
+
+
+          const itemCountry =
+            item?.country || {};
+
+
+          const name =
+            (league.name || "")
+              .toLowerCase();
+
+
+          const itemCountryName =
+            (itemCountry.name || "")
+              .toLowerCase();
+
+
+          const itemType =
+            (league.type || "")
+              .toLowerCase();
+
+
+          const matchesSearch =
+            !search ||
+            name.includes(search) ||
+            itemCountryName.includes(search);
+
+
+          const matchesCountry =
+            !country ||
+            itemCountryName === country;
+
+
+          const matchesType =
+            !type ||
+            itemType === type;
+
+
+          return (
+            matchesSearch &&
+            matchesCountry &&
+            matchesType
+          );
+
+        });
+
+
+      displayLeagues(filtered);
+
+
+      leagueStatus.textContent =
+        `Showing ${filtered.length} of ${allLeagues.length} current competitions.`;
+
+    }
+
+
+    /* ================================
+       LOAD LEAGUES
+    ================================= */
+
+    async function loadLeagues() {
+
+      leagueStatus.textContent =
+        "Loading real football competitions...";
+
+
+      leagueContainer.innerHTML = `
+
+        <div class="loading-state">
+          Loading real football leagues...
+        </div>
+
+      `;
+
+
+      try {
+
+        allLeagues =
+          await getLeagues();
+
+
+        /*
+         * Remove duplicates by league ID.
+         * A competition can have more than one
+         * current season entry.
+         */
+
+        const uniqueLeagues =
+          new Map();
+
+
+        allLeagues.forEach(item => {
+
+          const id =
+            item?.league?.id;
+
+
+          if (
+            id !== undefined &&
+            id !== null
+          ) {
+
+            if (!uniqueLeagues.has(id)) {
+
+              uniqueLeagues.set(
+                id,
+                item
+              );
+
+            }
+
+          }
+
+        });
+
+
+        allLeagues =
+          Array.from(
+            uniqueLeagues.values()
+          );
+
+
+        buildCountryFilter(
+          allLeagues
+        );
+
+
+        displayLeagues(
+          allLeagues
+        );
+
+
+        leagueStatus.textContent =
+          `${allLeagues.length} current football competitions loaded from real data.`;
+
+      } catch (error) {
+
+        console.error(
+          "Leagues API error:",
+          error
+        );
+
+
+        leagueContainer.innerHTML = `
+
+          <div class="error-state">
+
+            <strong>
+              Unable to load football competitions.
+            </strong>
+
+            <p>
+              Please refresh the page and try again.
+            </p>
+
+          </div>
+
+        `;
+
+
+        leagueCount.textContent =
+          "Data unavailable";
+
+
+        leagueStatus.textContent =
+          "Football competition data could not be loaded.";
+
+      }
+
+    }
+
+
+    /* ================================
+       SEARCH
+    ================================= */
+
+    leagueSearch.addEventListener(
+      "input",
+      filterLeagues
+    );
+
+
+    /* ================================
+       COUNTRY FILTER
+    ================================= */
+
+    countryFilter.addEventListener(
+      "change",
+      filterLeagues
+    );
+
+
+    /* ================================
+       TYPE FILTER
+    ================================= */
+
+    typeFilter.addEventListener(
+      "change",
+      filterLeagues
+    );
+
+
+    /* ================================
+       INITIAL LOAD
+    ================================= */
+
+    loadLeagues();
+
   </script>
-
-
-  <script src="script.js"></script>
 
 </body>
 </html>
