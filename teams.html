@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Teams | Football Hub</title>
+
+  <meta
+    name="description"
+    content="Explore football teams, clubs and national teams on Football Hub."
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =====================================================
+       HEADER
+       ===================================================== -->
+
+  <header class="site-header">
+
+    <div class="container header-inner">
+
+      <a href="index.html" class="logo">
+        <span class="logo-ball">⚽</span>
+        <span>FOOTBALL HUB</span>
+      </a>
+
+      <button
+        class="menu-button"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+      <nav class="main-nav" aria-label="Main navigation">
+
+        <a href="index.html">Home</a>
+        <a href="matches.html">Live Scores</a>
+        <a href="matches.html">Matches</a>
+        <a href="leagues.html">Leagues</a>
+        <a href="teams.html">Teams</a>
+        <a href="players.html">Players</a>
+        <a href="news.html">News</a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       PAGE HEADER
+       ===================================================== -->
+
+  <section class="page-header">
+
+    <div class="container">
+
+      <h1>
+        Football Teams
+      </h1>
+
+      <p>
+        Explore football clubs and national teams from
+        competitions around the world.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       MAIN CONTENT
+       ===================================================== -->
+
+  <main>
+
+    <div class="container">
+
+
+      <!-- =================================================
+           SEARCH
+           ================================================= -->
+
+      <section class="section">
+
+        <div class="search-box">
+
+          <input
+            type="search"
+            id="team-search"
+            placeholder="Search teams..."
+            aria-label="Search teams"
+          >
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           TEAM FILTERS
+           ================================================= -->
+
+      <section class="section">
+
+        <div class="filters">
+
+          <select id="team-country" aria-label="Filter by country">
+
+            <option value="all">
+              All Countries
+            </option>
+
+            <option value="england">
+              England
+            </option>
+
+            <option value="spain">
+              Spain
+            </option>
+
+            <option value="italy">
+              Italy
+            </option>
+
+            <option value="germany">
+              Germany
+            </option>
+
+            <option value="france">
+              France
+            </option>
+
+            <option value="kenya">
+              Kenya
+            </option>
+
+            <option value="international">
+              International
+            </option>
+
+          </select>
+
+
+          <select id="team-type" aria-label="Filter by team type">
+
+            <option value="all">
+              All Team Types
+            </option>
+
+            <option value="club">
+              Clubs
+            </option>
+
+            <option value="national">
+              National Teams
+            </option>
+
+          </select>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           TEAM DATABASE
+           ================================================= -->
+
+      <section class="section">
+
+        <div class="section-heading">
+
+          <h2>
+            Team Database
+          </h2>
+
+          <span>
+            Real football teams
+          </span>
+
+        </div>
+
+
+        <div class="no-results">
+
+          <p>
+            Teams will appear here when Football Hub is
+            connected to the real football data service.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           TEAM INFORMATION
+           ================================================= -->
+
+      <section class="section">
+
+        <div class="section-heading">
+
+          <h2>
+            Team Information
+          </h2>
+
+        </div>
+
+
+        <div class="features">
+
+
+          <div class="feature">
+
+            <div class="feature-icon">
+              🏟️
+            </div>
+
+            <h3>
+              Club Profiles
+            </h3>
+
+            <p>
+              View club information, competitions, squads,
+              fixtures, results and statistics.
+            </p>
+
+          </div>
+
+
+          <div class="feature">
+
+            <div class="feature-icon">
+              🌍
+            </div>
+
+            <h3>
+              National Teams
+            </h3>
+
+            <p>
+              Explore national football teams and their
+              international competition information.
+            </p>
+
+          </div>
+
+
+          <div class="feature">
+
+            <div class="feature-icon">
+              📊
+            </div>
+
+            <h3>
+              Team Statistics
+            </h3>
+
+            <p>
+              Follow team performance, standings, results
+              and other available statistics.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           FUTURE TEAM DATA
+           ================================================= -->
+
+      <section class="section">
+
+        <div class="section-heading">
+
+          <h2>
+            Team Data
+          </h2>
+
+          <span>
+            Coming with live integration
+          </span>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+          <table class="data-table">
+
+            <thead>
+
+              <tr>
+
+                <th>
+                  Team
+                </th>
+
+                <th>
+                  Country
+                </th>
+
+                <th>
+                  Competition
+                </th>
+
+                <th>
+                  Status
+                </th>
+
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              <tr>
+
+                <td>
+                  —
+                </td>
+
+                <td>
+                  —
+                </td>
+
+                <td>
+                  —
+                </td>
+
+                <td>
+                  Awaiting real data
+                </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </section>
+
+
+    </div>
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-inner">
+
+      <div>
+
+        <div class="footer-logo">
+          FOOTBALL HUB
+        </div>
+
+        <div class="footer-text">
+          Everything Football. In One Place.
+        </div>
+
+        <div class="footer-text">
+          © <span data-current-year></span> Football Hub.
+          All rights reserved.
+        </div>
+
+      </div>
+
+
+      <div class="footer-links">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="matches.html">
+          Matches
+        </a>
+
+        <a href="leagues.html">
+          Leagues
+        </a>
+
+        <a href="teams.html">
+          Teams
+        </a>
+
+        <a href="players.html">
+          Players
+        </a>
+
+        <a href="news.html">
+          News
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =====================================================
+       TEAM SEARCH AND FILTERS
+       ===================================================== -->
+
+  <script>
+
+    const teamSearch = document.getElementById("team-search");
+    const teamCountry = document.getElementById("team-country");
+    const teamType = document.getElementById("team-type");
+
+    function applyTeamFilters() {
+
+      /*
+       * The real team database will be connected later.
+       * This function is prepared for the real data.
+       */
+
+      const searchTerm =
+        teamSearch ? teamSearch.value.toLowerCase().trim() : "";
+
+      const country =
+        teamCountry ? teamCountry.value : "all";
+
+      const type =
+        teamType ? teamType.value : "all";
+
+      /*
+       * Keep these values available for the future
+       * football API integration.
+       */
+
+      console.log("Team search:", searchTerm);
+      console.log("Team country:", country);
+      console.log("Team type:", type);
+    }
+
+
+    if (teamSearch) {
+      teamSearch.addEventListener(
+        "input",
+        applyTeamFilters
+      );
+    }
+
+
+    if (teamCountry) {
+      teamCountry.addEventListener(
+        "change",
+        applyTeamFilters
+      );
+    }
+
+
+    if (teamType) {
+      teamType.addEventListener(
+        "change",
+        applyTeamFilters
+      );
+    }
+
+  </script>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
